@@ -1,12 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>L'Arena - Wireframe Layout</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    
+
+    <header class="site-header">
+        <div class="top-bar">
+            <div class="top-bar-flex"> 
+                <div class="top-left">
+                    <i class="fa-solid fa-bars menu-icon"></i>
+                    <span class="logo-a">’A</span>
+                    <a href="#"><i class="fa-regular fa-newspaper"></i> Edizione digitale</a>
+                    <a href="#"><i class="fa-regular fa-envelope"></i> Newsletter</a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i> Segnala</a>
+                    <a href="#">Necrologie</a>
+                    <a href="#">Accedi</a>
+                </div>
+                
+                <div class="top-right">
+                    <div class="social-icons">
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                    <button class="btn-abbonati">Abbonati</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container logo-bar">
+            <div class="meteo">
+                <i class="fa-solid fa-cloud-sun-rain icona-meteo"></i>
+                <span class="gradi">21°</span> 
+                <span class="citta">Verona</span>
+            </div>
+            
+            <div class="logo-centrale">
+                <h1 class="logo-testuale">Logo</h1>
+            </div>
+            
+            <div class="data-oggi">lunedì, 20 aprile 2026</div>
+        </div>
+
+        <div class="container nav-bg">
+            <nav class="tag-bar">
+                <a href="#" class="tag tag-purple"><i class="fa-solid fa-star"></i> VINITALY</a>
+                <a href="#" class="tag tag-dark"><i class="fa-solid fa-star"></i> L'ARENA 160 ANNI</a>
+                <a href="#" class="tag tag-plain"><span class="slashes">///</span> FILOBUS</a>
+                <a href="#" class="tag tag-gold"><i class="fa-solid fa-star"></i> MILANO CORTINA 2026</a>
+                <a href="#" class="tag tag-green"><i class="fa-solid fa-star"></i> PODCAST</a>
+                <a href="#" class="tag tag-plain"><span class="slashes">///</span> SPORT</a>
+                <a href="#" class="tag tag-yellow"><i class="fa-solid fa-star"></i> PALLONE D'ORO</a>
+                <a href="#" class="tag tag-plain break-line"><span class="slashes">///</span> APPROFONDIMENTI</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="hero-section">
+            <article class="hero-main">
+                <img src="https://placehold.co/800x450/e0e0e0/666666?text=Foto+Principale" alt="Immagine principale">
+                <div class="testo-notizia">
+                    <span class="label">/// L'ANNUNCIO</span>
+                    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </h1>
+                </div>
+            </article>
+
+            <aside class="hero-sidebar">
+                <article class="ad-card">
+                    <img src="https://placehold.co/400x300/20c997/ffffff?text=Pubblicit%C3%A0" alt="Pubblicità">
+                </article>
+
+                <article class="card-grigia">
+                    <img src="https://placehold.co/400x250/e0e0e0/666666?text=Foto+Secondaria" alt="Immagine secondaria">
+                    <div class="testo-spalla">
+                        <span class="label-small">/// ITALIA</span>
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                    </div>
+                </article>
+            </aside>
+        </section>
+    </main>
+
 </body>
 </html>
