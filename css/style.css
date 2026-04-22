@@ -39,13 +39,25 @@ img {
     display: block;
 }
 
-/* Top Bar */
+/* Top Bar - Metodo infallibile */
 .top-bar {
+    position: fixed !important; /* Si incolla allo schermo del dispositivo */
+    top: 0;
+    left: 0;
+    width: 100%; /* Fondamentale: con fixed l'elemento perde la sua larghezza automatica */
+    z-index: 9999;
     background-color: #073e7c;
     color: #fff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
     font-size: 14px;
-    padding: 3px 12px;
+    padding: 4px 12px; /* Ho sistemato un pelo il padding per farla respirare */
+    box-sizing: border-box; /* Evita che il padding faccia sbordare la barra a destra */
+}
+
+/* Quando usi 'fixed', la barra fluttua e il contenuto sotto "sale". 
+   Aggiungiamo un cuscinetto al body per evitare che il logo venga coperto! */
+body {
+    padding-top: 50px; /* Regola questo numero se il logo ti sembra troppo attaccato alla barra blu */
 }
 
 .top-bar-flex {
@@ -129,34 +141,36 @@ img {
 .logo-bar {
     display: grid;
     grid-template-columns: 1fr auto 1fr; 
-    align-items: center;
-    padding: 25px 0;
+    align-items: end;
+    padding: 8px 0 6px 0;
 }
 
 .meteo {
     justify-self: start; 
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 8px;
     color: #000;
+    margin-left: 60px;
 }
 
 .icona-meteo {
-    font-size: 32px;
+    font-size: 28px;
     color: #1a427b;
+    padding: 30px 0 6px 0;
 }
 
 .gradi {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 42px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
     font-weight: bold;
 }
 
 .citta {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+    font-family: "DM Serif Display", serif;
+    font-size: 14px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 .logo-centrale {
@@ -165,10 +179,11 @@ img {
 
 .data-oggi {
     justify-self: end; 
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'DM Serif Display', serif;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     color: #000;
+    margin-right: 60px;
 }
 
 .logo-testuale {
@@ -187,15 +202,15 @@ img {
     justify-content: center;
     flex-wrap: wrap; 
     gap: 6px 15px; /* Avvicina i bottoni sia in orizzontale che in verticale */
-    padding: 8px 0; /* Abbassa questo valore per "schiacciare" le due linee nere verso i bottoni */
+    padding: 8px ; /* Abbassa questo valore per "schiacciare" le due linee nere verso i bottoni */
     margin: 0 45px; 
     border-top: 5px solid #000;
     border-bottom: 1px solid #000; /* Riga inferiore nera invece che grigia, come nel sito originale */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-family: "DM Sans", sans-serif;
 }
 
 .tag {
-    font-size: 10px;
+    font-size: 13px;
     font-weight: bold;
     padding: 4px 8px;
     color: #555;
@@ -206,8 +221,8 @@ img {
     border-radius: 2px;
 }
 
-.tag i {
-    font-size: 13px;
+.tag i { 
+    font-size: 13px; 
 }
 
 .slashes {
@@ -287,10 +302,6 @@ img {
     margin: -30px auto 15px auto; 
 }
 
-.testo-spalla {
-    padding: 0;
-}
-
 .card-grigia h3 {
     font-size: 20px;
     line-height: 1.2;
@@ -308,18 +319,669 @@ img {
 }
 
 .label-small {
-    font-family: Arial, sans-serif;
+    color: #073e7c; /* Blu L'Arena */
+    font-family: 'DM Sans', sans-serif;
     font-size: 10px;
     font-weight: bold;
-    color: #1a427b;
     text-transform: uppercase;
-    display: block;
-    margin-bottom: 6px;
+    display: inline-block;
 }
 
 .testo-notizia {
     padding: 20px; 
 }
+
+/* ================= SEZIONE SECONDARIA ================= */
+.secondary-section {
+    display: grid;
+    grid-template-columns: 2.3fr 1fr; /* Stessa identica proporzione della Hero Section! */
+    gap: 40px;
+    margin: 0 auto 0 auto; /* 'auto' a destra e sinistra la centra perfettamente */
+    max-width: 1100px; /* Se vedi che è ancora larga, scendi a 980px o 950px finché non combacia col top! */
+    padding: 0 0 60px 0;
+    background-color: #f4f4f4;
+}
+
+/* --- Card Orizzontali (Sinistra) --- */
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spazio tra una riga e l'altra */
+}
+
+.card-row {
+    display: flex; /* Mette immagine e testo sulla stessa riga */
+    background-color: #fff;
+    align-items: stretch; /* Fa sì che la scatola del testo sia alta quanto l'immagine */
+}
+
+.card-row img {
+    width: 40%; /* L'immagine prende il 40% dello spazio */
+    object-fit: cover;
+}
+
+.card-row-content {
+    width: 60%; /* Il testo prende il restante 60% */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente il testo */
+}
+
+.card-row-content h2 {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.author {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #555;
+    margin-top: auto; /* Spinge l'autore verso il basso se c'è spazio vuoto */
+}
+
+/* Variante Sfondo Blu (Es. Gsk) */
+.card-blue {
+    background-color: #0d3b66;
+    color: #fff;
+}
+
+.card-blue .author {
+    color: #ccc; /* Autore grigio chiaro sul blu */
+}
+
+.label-white {
+    color: #fff !important; /* Etichetta bianca sul fondo blu */
+}
+
+/* --- Spalla e Sondaggio (Destra) --- */
+.secondary-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.poll-widget {
+    background-color: #fff;
+}
+
+.poll-image {
+    position: relative; /* Fondamentale per posizionare l'etichetta sopra */
+}
+
+.poll-image img {
+    width: 100%;
+    display: block;
+}
+
+.poll-badge {
+    position: absolute;
+    bottom: -12px; /* Sporge un po' fuori dalla foto verso il basso */
+    left: 20px;
+    background-color: #0d3b66; /* Blu scuro */
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.poll-content {
+    padding: 25px 20px 20px 20px;
+}
+
+.poll-content h3 {
+    font-size: 18px;
+    color: #0d3b66;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.poll-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.poll-form label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.btn-vota {
+    background-color: #0d3b66;
+    color: #fff;
+    border: none;
+    padding: 8px 25px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    align-self: flex-start; /* Evita che il bottone diventi largo quanto tutta la colonna */
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+.poll-footer {
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.poll-footer a {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #0d3b66;
+}
+
+/* ================= SEZIONE SCURA (SPECIALI E RUBRICHE) ================= */
+.dark-wrapper {
+    background-color: #333333; /* Il grigio scuro di fondo */
+    padding: 40px 80px;
+    margin: 40px -15px 0 -15px; /* Compensa il padding del container per far toccare i bordi della fascia grigia chiara */
+}
+
+.dark-section {
+    margin-bottom: 50px;
+}
+
+.dark-section:last-of-type {
+    margin-bottom: 0; /* Toglie il margine dall'ultima per non avere spazio vuoto extra in fondo */
+}
+
+/* Titolo con parallelogramma */
+.dark-title {
+    color: #ffffff;
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.parallelogram {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    transform: skew(-15deg); /* Crea l'inclinazione! */
+}
+
+/* Griglia a 4 colonne */
+.cards-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+}
+
+.dark-card {
+    background-color: #ffffff; /* La card è bianca */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.dark-card-img {
+    position: relative; /* Serve per ancorare l'etichetta blu */
+}
+
+.dark-card-img img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Formato rettangolare classico, perfetto per i video e le news */
+    object-fit: cover;
+    display: block;
+}
+
+/* L'etichetta blu in basso a sinistra nell'immagine */
+.badge-blue {
+    position: absolute;
+    bottom: -12px; /* MAGIA 1: La fa sporgere sotto l'immagine, appoggiandola sul bianco */
+    left: 20px; /* MAGIA 2: La stacca dal bordo sinistro */
+    color: #ffffff;
+    font-family: "DM sans", sans-serif;
+    font-size: 12px;
+    padding: 6px 14px;
+    text-transform: uppercase;
+    z-index: 10; /* Assicura che "galleggi" sopra tutto il resto */
+}
+
+/* Lo sfondo inclinato (Il parallelogramma) */
+.badge-blue::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #073e7c; /* Il blu scuro de L'Arena */
+    transform: skew(-15deg); /* MAGIA 3: Inclina SOLO lo sfondo blu */
+    z-index: -1; /* Nasconde lo sfondo blu DIETRO al testo bianco */
+}
+
+.dark-card-text {
+    padding: 15px 12px;
+    display: flex;
+    flex-direction: column; /* MAGIA: Ora l'etichetta sta SOPRA il titolo, non di fianco! */
+    gap: 8px; /* Spazio elegante tra i tre trattini e il titolo */
+    flex-grow: 1;
+}
+
+.dark-card-text h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    line-height: 1.25;
+    margin: 0;
+    color: #000;
+}
+
+/* ================= REGOLE TIPOGRAFICHE GLOBALI ================= */
+/* Applichiamo il Sans-Serif ai testi generici, autori, etichette */
+body, .label, .label-small, .author, .vedi-tutti, button, nav a {
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Applichiamo il Serif ai titoli delle notizie */
+h1, h2, h3, .dark-title, .promo-title {
+    font-family: 'DM Serif Display', serif;
+}
+
+
+/* ================= FASCIA GRIGIA (TOP 500) ================= */
+.grey-wrapper {
+    background-color: #d9d9d9;
+    max-width: 1100px; /* Usa ESATTAMENTE lo stesso numero che hai messo in .secondary-section */
+    margin: 0 auto 0 auto; /* Via i margini negativi! L' 'auto' la tiene al centro */
+    padding: 40px 30px;
+}
+
+.section-header-red h2 {
+    color: #e63946; /* Rosso scuro */
+    font-size: 32px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #999;
+    padding-bottom: 10px;
+    
+}
+
+.text-red {
+    font-weight: normal;
+}
+
+
+/* ================= FOOTER ================= */
+.site-footer {
+    background-color: #fafafa; 
+    padding: 40px 15px;
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.footer-container {
+    max-width: 1000px; /* Stessa larghezza delle notizie sopra! */
+    margin: 0 auto;
+}
+
+/* 3 Colonne Promozionali */
+.footer-promos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+    border-top: 2px dotted #000000; /* La famosa riga tratteggiata! */
+    padding-top: 30px; /* Spazio tra la riga e i titoli */
+}
+
+.promo-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px; /* Dimensione richiesta */
+    color: #073e7c;
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.promo-card-white {
+    background-color: #ffffff;
+    width: 100%;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; 
+}
+
+.promo-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra gli elementi interni */
+}
+
+.promo-img-bg {
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 180px; /* L'ho abbassato ancora di più (da 220px a 180px) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px; /* Ridotto lo spazio sotto il grigio */
+}
+
+.promo-img-bg img {
+    max-height: 130px; /* Immagini leggermente più piccole */
+    width: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.promo-box {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    height: 100%;
+}
+
+.btn-scopri {
+    border-radius: 2px;
+    padding: 8px 30px;
+}
+
+.promo-item-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px; /* Font leggermente più piccolo per proporzione */
+    margin: 10px 0 15px 0;
+    color: #000;
+}
+
+/* Box Blu del Quotidiano */
+.promo-box-blue {
+    background-color: #073e7c;
+    width: 100%;
+    height: 100%; 
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+.promo-box-blue img {
+    max-height: 130px; /* Stessa altezza massima delle altre copertine */
+    width: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.bg-light { background-color: #f5f5f5; }
+.bg-dark { background-color: #073e7c; color: #fff; }
+
+.promo-box img {
+    max-width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-blue {
+    background-color: #073e7c;
+    color: #fff;
+    border: none;
+    padding: 8px 24px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #073e7c;
+    border: none;
+    padding: 8px 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-link {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+/* Linea Link Centrali */
+.footer-links-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 4px solid #000; /* ECCO LA BARRA NERA SPESSA! */
+    border-bottom: 2px dotted #000;
+    padding: 15px 0;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; 
+    gap: 20px;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav a {
+    color: #073e7c;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    color: #073e7c;
+    font-size: 18px;
+}
+
+.link-necro {
+    color: #073e7c;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Loghi e Copyright */
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.gruppo-label {
+    font-size: 11px;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+.logos-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.logo-placeholder {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+.copyright-text {
+    font-size: 11px;
+    color: #888;
+    margin: 0;
+}
+
+/* --- Box Citazione (Spalla) --- */
+.quote-box {
+    background-color: #073e7c;
+    color: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.quote-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.quote-marks {
+    font-family: 'Georgia', serif;
+    font-size: 60px;
+    line-height: 0.8;
+    color: #fff;
+}
+
+.quote-avatar {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.quote-box h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.3;
+}
+
+/* --- Modifiche Fascia Grigia (Top 500) --- */
+.wrapper-footer-link {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.wrapper-footer-link a {
+    color: #fff;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.wrapper-footer-link a:hover span {
+    text-decoration: underline;
+    text-underline-offset: 4px; /* Abbassa un po' la linea per non tagliare le lettere */
+    text-decoration-thickness: 1px;
+}
+
+/* Icona Play Sulle Immagini */
+.play-icon-overlay {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-icon-overlay::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 10px solid #cc0000; /* Triangolino rosso */
+    margin-left: 3px; /* Centra visivamente il triangolo */
+}
+
+/* --- Fascia Video (Scuro) --- */
+.video-wrapper {
+    background-color: #333333;
+    max-width: 1100px; /* Usa ESATTAMENTE lo stesso numero */
+    margin: 0 auto; /* Via i margini negativi, perfettamente centrata */
+    padding: 40px 30px;
+}
+
+.video-card {
+    background-color: #222222; /* Sfondo scuro per la singola card video */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.video-card-img {
+    position: relative;
+}
+
+.video-card-img img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Formato rettangolare classico, perfetto per i video e le news */
+    object-fit: cover;
+    display: block;
+}
+
+/* Il numerino tondo in alto a destra */
+.video-number {
+    position: absolute;
+    top: -15px; /* La fa sporgere a metà fuori dal bordo superiore */
+    right: 10px; /* La tiene leggermente rientrata dal bordo destro */
+    width: 36px; /* Cerchio molto più grande */
+    height: 36px;
+    background-color: #073e7c; /* Blu L'Arena */
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'DM Serif Display', serif; 
+    font-size: 20px; /* Numero molto più grande e visibile */
+    font-weight: bold;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.video-card-text {
+    padding: 15px 12px;
+    display: flex;
+    flex-direction: column; /* MAGIA: Ora l'etichetta sta SOPRA il titolo, non di fianco! */
+    gap: 8px; /* Spazio elegante tra i tre trattini e il titolo */
+    flex-grow: 1;
+}
+
+.video-card-text h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    line-height: 1.25;
+    margin: 0;
+    color: #fff; /* Titolo bianco sui video */
+}
+
+.video-duration {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: #aaa;
+}
+
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -340,5 +1002,36 @@ img {
 
     .meteo, .logo-centrale, .data-oggi {
         justify-self: center;
+    }
+
+    .secondary-section {
+        grid-template-columns: 1fr;
+    }
+    .card-row {
+        flex-direction: column; /* Impila immagine e testo in verticale su mobile */
+    }
+    .card-row img, .card-row-content {
+        width: 100%;
+    }
+    .cards-grid-4 {
+        grid-template-columns: repeat(2, 1fr); /* Diventano 2 colonne affiancate */
+    }
+    .footer-promos {
+        grid-template-columns: 1fr;
+    }
+    .footer-links-row {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .footer-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Ulteriore adattamento per schermi molto piccoli (es. cellulari) */
+@media (max-width: 500px) {
+    .cards-grid-4 {
+        grid-template-columns: 1fr; /* 1 colonna singola sui cellulari */
     }
 }
