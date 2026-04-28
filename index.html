@@ -13,21 +13,23 @@
         <div class="top-bar">
             <div class="top-bar-flex"> 
                 <div class="top-left">
-                    <i class="fa-solid fa-bars menu-icon"></i>
-                    <span class="logo-a">’A</span>
-                    <a href="#"><i class="fa-regular fa-newspaper"></i> Edizione digitale</a>
-                    <a href="#"><i class="fa-regular fa-envelope"></i> Newsletter</a>
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i> Segnala</a>
+                    <i class="fa-solid fa-bars menu-icon hide-mobile"></i>
+                    <span class="logo-a hide-mobile">’A</span>
+                    
+                    <a href="#" class="hide-mobile"><i class="fa-regular fa-newspaper"></i> Edizione digitale</a>
+                    <a href="#"><i class="fa-regular fa-envelope hide-mobile"></i> Newsletter</a>
+                    <a href="#"><i class="fa-brands fa-whatsapp hide-mobile"></i> Segnala</a>
                     <a href="#">Necrologie</a>
-                    <a href="#">Accedi</a>
+                    <a href="#" class="hide-mobile">Accedi</a>
                 </div>
                 
                 <div class="top-right">
-                    <div class="social-icons">
+                    <div class="social-icons hide-mobile">
                         <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                         <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                         <a href="#" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                     <button class="btn-abbonati">Abbonati</button>
                 </div>
@@ -35,7 +37,11 @@
         </div>
 
         <div class="container logo-bar">
-            <div class="meteo">
+            <div class="show-mobile" style="font-size: 24px; color: white; cursor: pointer;">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="meteo hide-mobile">
                 <i class="fa-solid fa-cloud-sun-rain icona-meteo"></i>
                 <span class="gradi">21°</span> 
                 <span class="citta">Verona</span>
@@ -45,9 +51,13 @@
                 <h1 class="logo-testuale">Logo</h1>
             </div>
             
-            <div class="data-oggi">21/04/2026</div>
-        </div>
+            <div class="data-oggi hide-mobile">Martedì, 21 Aprile 2026</div>
 
+            <div class="show-mobile" style="font-size: 24px; color: white; cursor: pointer;">
+                <i class="fa-solid fa-circle-user"></i>
+            </div>
+        </div>
+        
         <div class="container nav-bg">
             <nav class="tag-bar">
                 <a href="#" class="tag tag-purple"><i class="fa-solid fa-star"></i> VINITALY</a>
@@ -60,9 +70,7 @@
                 <a href="#" class="tag tag-plain break-line"><span class="slashes">///</span> APPROFONDIMENTI</a>
             </nav>
         </div>
-    </header>
-
-    <main class="container main-content">
+    </header> <main class="container main-content">
         <section class="hero-section">
             <article class="hero-main">
                 <img src="https://placehold.co/800x450/e0e0e0/666666?text=Foto+Principale" alt="Immagine principale">
@@ -87,7 +95,6 @@
             </aside>
         </section>
         
-        <!-- Sezione secondaria con lista di notizie e sidebar laterale -->
         <section class="secondary-section">
             
             <div class="news-list">
@@ -151,91 +158,111 @@
         </section>
 
         <section class="dark-wrapper">
-            
+        
             <div class="dark-section">
                 <h2 class="dark-title"><i class="parallelogram"></i> Speciali</h2>
-                <div class="cards-grid-4">
-                    <article class="dark-card">
-                        <div class="dark-card-img">
-                            <img src="https://placehold.co/300x200/e0e0e0/666666?text=Foto+1" alt="Speciale 1">
-                            <span class="badge-blue">SALUTE & BENESSERE</span>
-                        </div>
-                        <div class="dark-card-text">
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                        </div>
-                    </article>
-                    <article class="dark-card">
-                        <div class="dark-card-img">
-                            <img src="https://placehold.co/300x200/e0e0e0/666666?text=Foto+2" alt="Speciale 2">
-                            <span class="badge-blue">ANIMALI & CO</span>
-                        </div>
-                        <div class="dark-card-text">
-                            <h3>Sed do eiusmod tempor incididunt ut labore et dolore.</h3>
-                        </div>
-                    </article>
-                    <article class="dark-card">
-                        <div class="dark-card-img">
-                            <img src="https://placehold.co/300x200/e0e0e0/666666?text=Foto+3" alt="Speciale 3">
-                            <span class="badge-blue">SPETTACOLI</span>
-                        </div>
-                        <div class="dark-card-text">
-                            <h3>Ut enim ad minim veniam, quis nostrud exercitation.</h3>
-                        </div>
-                    </article>
-                    <article class="dark-card">
-                        <div class="dark-card-img">
-                            <img src="https://placehold.co/300x200/e0e0e0/666666?text=Foto+4" alt="Speciale 4">
-                            <span class="badge-blue">SEGNALA A L'ARENA</span>
-                        </div>
-                        <div class="dark-card-text">
-                            <h3>Duis aute irure dolor in reprehenderit in voluptate.</h3>
-                        </div>
-                    </article>
+                
+                <div class="slider-wrapper">
+                    <button class="slider-btn prev-btn" aria-label="Scorri indietro"><i class="fa-solid fa-chevron-left"></i></button>
+                    
+                    <div class="cards-grid-4 slider-track">
+                        <article class="dark-card">
+                            <div class="dark-card-img">
+                                <img src="https://placehold.co/300x225/e0e0e0/666666?text=Foto" alt="Speciale 1">
+                                <span class="badge-blue">SALUTE & BENESSERE</span>
+                            </div>
+                            <div class="dark-card-text">
+                                <h3>Il 25% delle donazioni di cellule staminali in Italia viene da Verona</h3>
+                            </div>
+                        </article>
+                        
+                        <article class="dark-card">
+                            <div class="dark-card-img">
+                                <img src="https://placehold.co/300x225/e0e0e0/666666?text=Foto" alt="Speciale 2">
+                                <span class="badge-blue">ANIMALI & CO</span>
+                            </div>
+                            <div class="dark-card-text">
+                                <h3>Cigni in cova a Lazise sul lungolago, transennato il nido</h3>
+                            </div>
+                        </article>
+                        
+                        <article class="dark-card">
+                            <div class="dark-card-img">
+                                <img src="https://placehold.co/300x225/e0e0e0/666666?text=Foto" alt="Speciale 3">
+                                <span class="badge-blue">SPETTACOLI</span>
+                            </div>
+                            <div class="dark-card-text">
+                                <h3>Ut enim ad minim veniam, quis nostrud exercitation.</h3>
+                            </div>
+                        </article>
+                        
+                        <article class="dark-card">
+                            <div class="dark-card-img">
+                                <img src="https://placehold.co/300x225/e0e0e0/666666?text=Foto" alt="Speciale 4">
+                                <span class="badge-blue">SEGNALA A L'ARENA</span>
+                            </div>
+                            <div class="dark-card-text">
+                                <h3>Duis aute irure dolor in reprehenderit in voluptate.</h3>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <button class="slider-btn next-btn" aria-label="Scorri avanti"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
-
+    
             <div class="dark-section">
                 <h2 class="dark-title"><i class="parallelogram"></i> Rubriche</h2>
-                <div class="cards-grid-4">
-                    <article class="dark-card">
-                        <div class="dark-card-img">
-                            <img src="https://placehold.co/300x200/e0e0e0/666666?text=Foto+5" alt="Rubrica 1">
-                            <span class="badge-blue">WINE & FOOD</span>
-                        </div>
-                        <div class="dark-card-text">
-                            <h3>Excepteur sint occaecat cupidatat non proident, sunt in.</h3>
-                        </div>
-                    </article>
-                    <article class="dark-card">
-                        <div class="dark-card-img">
-                            <img src="https://placehold.co/300x200/e0e0e0/666666?text=Foto+6" alt="Rubrica 2">
-                            <span class="badge-blue">VIP & CURIOSITÀ</span>
-                        </div>
-                        <div class="dark-card-text">
-                            <h3>Sunt in culpa qui officia deserunt mollit anim id est.</h3>
-                        </div>
-                    </article>
-                    <article class="dark-card">
-                        <div class="dark-card-img">
-                            <img src="https://placehold.co/300x200/e0e0e0/666666?text=Foto+7" alt="Rubrica 3">
-                            <span class="badge-blue">MOTORI</span>
-                        </div>
-                        <div class="dark-card-text">
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
-                        </div>
-                    </article>
-                    <article class="dark-card">
-                        <div class="dark-card-img">
-                            <img src="https://placehold.co/300x200/e0e0e0/666666?text=Foto+8" alt="Rubrica 4">
-                            <span class="badge-blue">OROSCOPO</span>
-                        </div>
-                        <div class="dark-card-text">
-                            <h3>Oroscopo di Martedì 21 Aprile 2026. Scopri le previsioni.</h3>
-                        </div>
-                    </article>
+                
+                <div class="slider-wrapper">
+                    <button class="slider-btn prev-btn" aria-label="Scorri indietro"><i class="fa-solid fa-chevron-left"></i></button>
+                    
+                    <div class="cards-grid-4 slider-track">
+                        <article class="dark-card">
+                            <div class="dark-card-img">
+                                <img src="https://placehold.co/300x225/e0e0e0/666666?text=Foto" alt="Rubrica 1">
+                                <span class="badge-blue">WINE & FOOD</span>
+                            </div>
+                            <div class="dark-card-text">
+                                <h3>Dai bisi di Colognola agli asparagi di Mambrotta, nei ristoranti tipici.</h3>
+                            </div>
+                        </article>
+                        
+                        <article class="dark-card">
+                            <div class="dark-card-img">
+                                <img src="https://placehold.co/300x225/e0e0e0/666666?text=Foto" alt="Rubrica 2">
+                                <span class="badge-blue">VIP & CURIOSITÀ</span>
+                            </div>
+                            <div class="dark-card-text">
+                                <h3>Avventura a fumetti, Prezzemolo protagonista al salone del Libro.</h3>
+                            </div>
+                        </article>
+                        
+                        <article class="dark-card">
+                            <div class="dark-card-img">
+                                <img src="https://placehold.co/300x225/e0e0e0/666666?text=Foto" alt="Rubrica 3">
+                                <span class="badge-blue">MOTORI</span>
+                            </div>
+                            <div class="dark-card-text">
+                                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
+                            </div>
+                        </article>
+                        
+                        <article class="dark-card">
+                            <div class="dark-card-img">
+                                <img src="https://placehold.co/300x225/e0e0e0/666666?text=Foto" alt="Rubrica 4">
+                                <span class="badge-blue">OROSCOPO</span>
+                            </div>
+                            <div class="dark-card-text">
+                                <h3>Oroscopo di Martedì 21 Aprile 2026. Scopri le previsioni.</h3>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <button class="slider-btn next-btn" aria-label="Scorri avanti"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
-
+    
         </section>
 
     </main>
@@ -284,48 +311,57 @@
             <h2>Titolo <span class="text-red">Speciale</span></h2>
         </div>
         
-        <div class="cards-grid-4">
-            <article class="dark-card">
-                <div class="dark-card-img">
-                    <img src="https://placehold.co/300x200/cccccc/666666?text=Foto" alt="Immagine Speciale">
-                    <div class="play-icon-overlay"></div>
-                </div>
-                <div class="dark-card-text">
-                    <span class="label-small">/// LOREM IPSUM</span>
-                    <h3>"Duis aute irure dolor in reprehenderit in voluptate velit esse."</h3>
-                </div>
-            </article>
-            <article class="dark-card">
-                <div class="dark-card-img">
-                    <img src="https://placehold.co/300x200/cccccc/666666?text=Foto" alt="Immagine Speciale">
-                    <div class="play-icon-overlay"></div>
-                </div>
-                <div class="dark-card-text">
-                    <span class="label-small">/// LOREM IPSUM</span>
-                    <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa.</h3>
-                </div>
-            </article>
-            <article class="dark-card">
-                <div class="dark-card-img">
-                    <img src="https://placehold.co/300x200/cccccc/666666?text=Foto" alt="Immagine Speciale">
-                    <div class="play-icon-overlay"></div>
-                </div>
-                <div class="dark-card-text">
-                    <span class="label-small">/// LOREM IPSUM</span>
-                    <h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h3>
-                </div>
-            </article>
-            <article class="dark-card">
-                <div class="dark-card-img">
-                    <img src="https://placehold.co/300x200/cccccc/666666?text=Foto" alt="Immagine Speciale">
-                    <div class="play-icon-overlay"></div>
-                </div>
-                <div class="dark-card-text">
-                    <span class="label-small">/// LOREM IPSUM</span>
-                    <h3>Sed do eiusmod tempor incididunt ut labore et dolore magna.</h3>
-                </div>
-            </article>
+        <div class="slider-wrapper">
+            
+            <button class="slider-btn prev-btn" aria-label="Scorri indietro"><i class="fa-solid fa-chevron-left"></i></button>
+            
+            <div class="cards-grid-4 slider-track">
+                <article class="dark-card">
+                    <div class="dark-card-img">
+                        <img src="https://placehold.co/300x200/cccccc/666666?text=Foto" alt="Immagine Speciale">
+                        <div class="play-icon-overlay"></div>
+                    </div>
+                    <div class="dark-card-text">
+                        <span class="label-small">/// LOREM IPSUM</span>
+                        <h3>"Duis aute irure dolor in reprehenderit in voluptate velit esse."</h3>
+                    </div>
+                </article>
+                <article class="dark-card">
+                    <div class="dark-card-img">
+                        <img src="https://placehold.co/300x200/cccccc/666666?text=Foto" alt="Immagine Speciale">
+                        <div class="play-icon-overlay"></div>
+                    </div>
+                    <div class="dark-card-text">
+                        <span class="label-small">/// LOREM IPSUM</span>
+                        <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa.</h3>
+                    </div>
+                </article>
+                <article class="dark-card">
+                    <div class="dark-card-img">
+                        <img src="https://placehold.co/300x200/cccccc/666666?text=Foto" alt="Immagine Speciale">
+                        <div class="play-icon-overlay"></div>
+                    </div>
+                    <div class="dark-card-text">
+                        <span class="label-small">/// LOREM IPSUM</span>
+                        <h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h3>
+                    </div>
+                </article>
+                <article class="dark-card">
+                    <div class="dark-card-img">
+                        <img src="https://placehold.co/300x200/cccccc/666666?text=Foto" alt="Immagine Speciale">
+                        <div class="play-icon-overlay"></div>
+                    </div>
+                    <div class="dark-card-text">
+                        <span class="label-small">/// LOREM IPSUM</span>
+                        <h3>Sed do eiusmod tempor incididunt ut labore et dolore magna.</h3>
+                    </div>
+                </article>
+            </div>
+
+            <button class="slider-btn next-btn" aria-label="Scorri avanti"><i class="fa-solid fa-chevron-right"></i></button>
+
         </div>
+        
         <div class="wrapper-footer-link">
             <a href="#"><span>VAI ALLO SPECIALE</span> <i class="fa-solid fa-chevron-right"></i></a>
         </div>
@@ -334,48 +370,61 @@
     <section class="video-wrapper">
         <h2 class="dark-title"><i class="parallelogram"></i> Video &gt;</h2>
         
-        <div class="cards-grid-4">
-            <article class="video-card">
-                <div class="video-card-img">
-                    <img src="https://placehold.co/300x200/555555/ffffff?text=Video" alt="Video">
-                    <div class="play-icon-overlay"></div>
-                    <div class="video-number">1</div>
-                </div>
-                <div class="video-card-text">
-                    <h3>Duis aute irure dolor in reprehenderit in voluptate velit. (LOREM)</h3>
-                </div>
-            </article>
-            <article class="video-card">
-                <div class="video-card-img">
-                    <img src="https://placehold.co/300x200/555555/ffffff?text=Video" alt="Video">
-                    <div class="play-icon-overlay"></div>
-                    <div class="video-number">2</div>
-                </div>
-                <div class="video-card-text">
-                    <h3>Excepteur sint occaecat cupidatat non proident. (IPSUM)</h3>
-                </div>
-            </article>
-            <article class="video-card">
-                <div class="video-card-img">
-                    <img src="https://placehold.co/300x200/555555/ffffff?text=Video" alt="Video">
-                    <div class="play-icon-overlay"></div>
-                    <div class="video-number">3</div>
-                </div>
-                <div class="video-card-text">
-                    <h3>Ut enim ad minim veniam, quis nostrud exercitation.</h3>
-                </div>
-            </article>
-            <article class="video-card">
-                <div class="video-card-img">
-                    <img src="https://placehold.co/300x200/555555/ffffff?text=Video" alt="Video">
-                    <div class="play-icon-overlay"></div>
-                    <div class="video-number">4</div>
-                </div>
-                <div class="video-card-text">
-                    <h3>Sed do eiusmod tempor incididunt ut labore. (DOLOR)</h3>
-                    <span class="video-duration">1:04</span>
-                </div>
-            </article>
+        <div class="slider-wrapper">
+            <button class="slider-btn prev-btn" aria-label="Scorri indietro"><i class="fa-solid fa-chevron-left"></i></button>
+            
+            <div class="cards-grid-4 slider-track">
+                
+                <article class="video-card">
+                    <div class="video-card-img">
+                        <img src="https://placehold.co/300x200/555555/ffffff?text=Video" alt="Video">
+                        <div class="play-icon-overlay"></div>
+                        <div class="video-number">1</div>
+                    </div>
+                    <div class="video-card-text">
+                        <h3>Duis aute irure dolor in reprehenderit.</h3>
+                        <span class="video-duration">1:04</span> </div>
+                </article>
+                
+                <article class="video-card">
+                    <div class="video-card-img">
+                        <img src="https://placehold.co/300x200/555555/ffffff?text=Video" alt="Video">
+                        <div class="play-icon-overlay"></div>
+                        <div class="video-number">2</div>
+                    </div>
+                    <div class="video-card-text">
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
+                        <span class="video-duration">1:12</span>
+                    </div>
+                </article>
+                
+                <article class="video-card">
+                    <div class="video-card-img">
+                        <img src="https://placehold.co/300x200/555555/ffffff?text=Video" alt="Video">
+                        <div class="play-icon-overlay"></div>
+                        <div class="video-number">3</div>
+                    </div>
+                    <div class="video-card-text">
+                        <h3>Sed do eiusmod tempor incididunt ut labore.</h3>
+                        <span class="video-duration">0:58</span>
+                    </div>
+                </article>
+                
+                <article class="video-card">
+                    <div class="video-card-img">
+                        <img src="https://placehold.co/300x200/555555/ffffff?text=Video" alt="Video">
+                        <div class="play-icon-overlay"></div>
+                        <div class="video-number">4</div>
+                    </div>
+                    <div class="video-card-text">
+                        <h3>Duis aute irure dolor in.</h3>
+                        <span class="video-duration">1:04</span>
+                    </div>
+                </article>
+                
+            </div>
+            
+            <button class="slider-btn next-btn" aria-label="Scorri avanti"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
     </section>
 
@@ -435,6 +484,7 @@
                     <i class="fa-brands fa-facebook-f"></i>
                     <i class="fa-brands fa-instagram"></i>
                     <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-tiktok"></i>
                 </div>
                 <a href="#" class="link-necro">Necrologie</a>
                 <button class="btn-blue">Abbonati</button>
@@ -455,6 +505,40 @@
 
     </div> 
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Cerca tutte le sezioni che hanno un carosello nella pagina
+        const sliders = document.querySelectorAll('.slider-wrapper');
+
+        sliders.forEach(wrapper => {
+            const track = wrapper.querySelector('.slider-track');
+            const prevBtn = wrapper.querySelector('.prev-btn');
+            const nextBtn = wrapper.querySelector('.next-btn');
+
+            // Se manca un pezzo (es. hai dimenticato di mettere un bottone), passa oltre senza dare errori
+            if(!track || !prevBtn || !nextBtn) return; 
+
+            // Funzione matematica: calcola di quanti pixel deve spostarsi la pista
+            function getScrollAmount() {
+                const card = track.querySelector('article');
+                // Calcola la larghezza di una singola card + lo spazio vuoto (gap)
+                const gap = parseInt(window.getComputedStyle(track).gap) || 0;
+                return card.offsetWidth + gap;
+            }
+
+            // Quando clicchi la freccia Sinistra
+            prevBtn.addEventListener('click', () => {
+                track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            });
+
+            // Quando clicchi la freccia Destra
+            nextBtn.addEventListener('click', () => {
+                track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            });
+        });
+    });
+</script>
 
 </body>
 </html>

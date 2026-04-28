@@ -10,10 +10,13 @@ body {
     color: #000;
     background-color: #ffffff;
     line-height: 1.4;
+    padding-top: 50px; /* Cuscinetto per la barra fixed */
 }
 
 .site-header {
     background-color: #ffffff;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .container {
@@ -39,25 +42,19 @@ img {
     display: block;
 }
 
-/* Top Bar - Metodo infallibile */
+/* ================= TOP BAR (DESKTOP) ================= */
 .top-bar {
-    position: fixed !important; /* Si incolla allo schermo del dispositivo */
+    position: fixed !important; 
     top: 0;
     left: 0;
-    width: 100%; /* Fondamentale: con fixed l'elemento perde la sua larghezza automatica */
+    width: 100%; 
     z-index: 9999;
     background-color: #073e7c;
     color: #fff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
     font-size: 14px;
-    padding: 4px 12px; /* Ho sistemato un pelo il padding per farla respirare */
-    box-sizing: border-box; /* Evita che il padding faccia sbordare la barra a destra */
-}
-
-/* Quando usi 'fixed', la barra fluttua e il contenuto sotto "sale". 
-   Aggiungiamo un cuscinetto al body per evitare che il logo venga coperto! */
-body {
-    padding-top: 50px; /* Regola questo numero se il logo ti sembra troppo attaccato alla barra blu */
+    padding: 4px 12px; 
+    box-sizing: border-box; 
 }
 
 .top-bar-flex {
@@ -69,6 +66,12 @@ body {
 .top-left {
     display: flex;
     align-items: center;
+}
+
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .menu-icon {
@@ -89,11 +92,11 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+    font-family: "Dm Sans", sans-serif;
     font-size: 14px; 
-    font-weight: 300;
     margin-left: 15px;
-    padding-left: 15px;
-    border-left: 2px dotted rgb(255, 255, 255);
+    padding: 0 0 0 19px;
+    border-left: 2px dotted rgb(255, 255, 255); /* La riga puntinata del PC */
 }
 
 .top-left a:first-of-type {
@@ -106,11 +109,17 @@ body {
     font-size: 14px;
 }
 
+/* Sottolineatura al passaggio del mouse */
+.top-left a:hover, .login-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+}
+
 .social-icons {
     display: flex;
     align-items: center;
     gap: 15px;
-    font-size: 15px;
 }
 
 .social-icons a {
@@ -119,12 +128,7 @@ body {
     border: none;
     margin: 0;
     padding: 0;
-}
-
-.top-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    font-size: 15px;
 }
 
 .btn-abbonati {
@@ -132,17 +136,19 @@ body {
     color: #000;
     border: none;
     padding: 8px 18px;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 14px;
     cursor: pointer;
+    font-family: "DM Sans", sans-serif;
 }
 
-/* Header */
+/* ================= LOGO BAR GIGANTE ================= */
 .logo-bar {
+    background-color: #ffffff;
     display: grid;
     grid-template-columns: 1fr auto 1fr; 
-    align-items: end;
-    padding: 8px 0 6px 0;
+    align-items: end; /* Spinge Meteo e Data verso il basso */
+    padding: 30px 15px 10px 15px; /* Spazio per logo gigante e vicinanza alla barra nera */
 }
 
 .meteo {
@@ -157,7 +163,7 @@ body {
 .icona-meteo {
     font-size: 28px;
     color: #1a427b;
-    padding: 30px 0 6px 0;
+    padding: 6px 0;
 }
 
 .gradi {
@@ -173,8 +179,31 @@ body {
     margin-top: 0px;
 }
 
+/* Container del Logo */
 .logo-centrale {
     justify-self: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Testo Gigante per il Logo */
+h1.logo-testuale {
+    margin: 0 !important;
+    font-family: 'DM Serif Display', serif;
+    font-size: 85px !important; /* Misure massicce per sembrare 70px in altezza */
+    line-height: 1 !important;
+    letter-spacing: -3px; /* Lettere accostate */
+    color: #212529 !important; 
+    text-align: center;
+}
+
+/* Se usi un'immagine per il logo */
+.logo-img {
+    width: 317px !important;
+    height: 70px !important;
+    object-fit: contain;
+    filter: none !important;
 }
 
 .data-oggi {
@@ -481,20 +510,16 @@ body {
 
 /* ================= SEZIONE SCURA (SPECIALI E RUBRICHE) ================= */
 .dark-wrapper {
-    background-color: #333333; /* Il grigio scuro di fondo */
+    background-color: #333333; 
     padding: 40px 80px;
-    margin: 40px -15px 0 -15px; /* Compensa il padding del container per far toccare i bordi della fascia grigia chiara */
+    margin: 40px -15px 0 -15px; 
 }
 
 .dark-section {
-    margin-bottom: 50px;
+    max-width: 1100px;
+    margin: 0 auto 50px auto;
 }
 
-.dark-section:last-of-type {
-    margin-bottom: 0; /* Toglie il margine dall'ultima per non avere spazio vuoto extra in fondo */
-}
-
-/* Titolo con parallelogramma */
 .dark-title {
     color: #ffffff;
     font-family: 'DM Serif Display', serif;
@@ -510,48 +535,40 @@ body {
     width: 12px;
     height: 12px;
     background-color: #ffffff;
-    transform: skew(-15deg); /* Crea l'inclinazione! */
-}
-
-/* Griglia a 4 colonne */
-.cards-grid-4 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 35px;
+    transform: skew(-15deg); 
 }
 
 .dark-card {
-    background-color: #ffffff; /* La card è bianca */
+    background-color: #ffffff; 
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
 .dark-card-img {
-    position: relative; /* Serve per ancorare l'etichetta blu */
+    position: relative; 
 }
 
 .dark-card-img img {
     width: 100%;
-    aspect-ratio: 16 / 9; /* Formato rettangolare classico, perfetto per i video e le news */
+    aspect-ratio: 4 / 3; /* Proporzione esatta della foto originale */
     object-fit: cover;
     display: block;
 }
 
-/* L'etichetta blu in basso a sinistra nell'immagine */
+/* Etichetta blu col parallelogramma sempre visibile */
 .badge-blue {
     position: absolute;
-    bottom: -12px; /* MAGIA 1: La fa sporgere sotto l'immagine, appoggiandola sul bianco */
-    left: 20px; /* MAGIA 2: La stacca dal bordo sinistro */
+    bottom: -12px; 
+    left: 20px; 
     color: #ffffff;
     font-family: "DM sans", sans-serif;
-    font-size: 12px;
-    padding: 6px 14px;
+    font-size: 11px; /* Leggermente rimpicciolita per farcela stare bene */
+    padding: 5px 12px;
     text-transform: uppercase;
-    z-index: 10; /* Assicura che "galleggi" sopra tutto il resto */
+    z-index: 10; 
 }
 
-/* Lo sfondo inclinato (Il parallelogramma) */
 .badge-blue::before {
     content: '';
     position: absolute;
@@ -559,27 +576,34 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #073e7c; /* Il blu scuro de L'Arena */
-    transform: skew(-15deg); /* MAGIA 3: Inclina SOLO lo sfondo blu */
-    z-index: -1; /* Nasconde lo sfondo blu DIETRO al testo bianco */
+    background-color: #073e7c; 
+    transform: skew(-15deg); 
+    z-index: -1; 
 }
 
 .dark-card-text {
-    padding: 15px 12px;
+    padding: 20px 15px 15px 15px; /* Lascia un po' di spazio in alto per il parallelogramma */
     display: flex;
-    flex-direction: column; /* MAGIA: Ora l'etichetta sta SOPRA il titolo, non di fianco! */
-    gap: 8px; /* Spazio elegante tra i tre trattini e il titolo */
-    flex-grow: 1;
+    flex-direction: column; 
+    flex-grow: 1; /* Spinge il box fino in fondo per pareggiare le altezze */
+    background-color: #ffffff; /* Sfondo bianco, confermato dall'inspector */
 }
 
 .dark-card-text h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 16px;
-    line-height: 1.25;
+    font-family: "DM Sans", sans-serif; /* Rivelato dall'inspector! */
+    font-size: 16px; /* Dimensione esatta */
+    color: #212529; /* Colore esatto */
+    font-weight: 700; /* Grassetto per i titoli delle notizie */
+    line-height: 1.3em; /* Distanza tra le righe per un'ottima leggibilità */
     margin: 0;
-    color: #000;
+    
+    /* Manteniamo il blocco delle righe per allineare le card, 
+       ma lo alziamo a 4 righe visto che i titoli sono lunghi */
+    display: -webkit-box;
+    -webkit-line-clamp: 4; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
-
 /* ================= REGOLE TIPOGRAFICHE GLOBALI ================= */
 /* Applichiamo il Sans-Serif ai testi generici, autori, etichette */
 body, .label, .label-small, .author, .vedi-tutti, button, nav a {
@@ -753,14 +777,13 @@ h1, h2, h3, .dark-title, .promo-title {
     text-decoration: none;
 }
 
-/* Linea Link Centrali */
 .footer-links-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 4px solid #000; /* ECCO LA BARRA NERA SPESSA! */
+    border-top: 4px solid #000; 
     border-bottom: 2px dotted #000;
-    padding: 15px 0;
+    padding: 20px 20px; 
     margin-top: 20px;
     margin-bottom: 30px;
     flex-wrap: wrap; 
@@ -963,17 +986,25 @@ h1, h2, h3, .dark-title, .promo-title {
 .video-card-text {
     padding: 15px 12px;
     display: flex;
-    flex-direction: column; /* MAGIA: Ora l'etichetta sta SOPRA il titolo, non di fianco! */
-    gap: 8px; /* Spazio elegante tra i tre trattini e il titolo */
+    flex-direction: column;
+    justify-content: space-between; /* Spinge la durata in fondo se presente */
+    gap: 8px; 
     flex-grow: 1;
 }
 
 .video-card-text h3 {
     font-family: 'DM Serif Display', serif;
     font-size: 16px;
-    line-height: 1.25;
+    line-height: 1.3em; /* Altezza riga definita */
     margin: 0;
-    color: #fff; /* Titolo bianco sui video */
+    color: #fff;
+    
+    /* MAGIA: Blocca il testo a 2 righe esatte per uniformare tutte le card! */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Numero massimo di righe */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: calc(1.3em * 2); /* Blocca l'altezza fissa a 2 righe */
 }
 
 .video-duration {
@@ -982,56 +1013,257 @@ h1, h2, h3, .dark-title, .promo-title {
     color: #aaa;
 }
 
+/* ================= CAROSELLO SLIDER E RESPONSIVE ================= */
 
-/* Responsive */
+/* Il contenitore principale che "abbraccia" bottoni e griglia */
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* --- 1. SU DESKTOP: Griglia fissa a 4 colonne, bottoni nascosti --- */
+.slider-track {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 10px 0;
+}
+
+/* Assicura che la classe vecchia non rompa la nuova griglia */
+.slider-track.cards-grid-4 {
+    grid-template-columns: repeat(4, 1fr); 
+    display: grid;
+}
+
+/* Nascondiamo completamente i bottoni su PC */
+.slider-btn {
+    display: none; 
+}
+
+/* Nasconde gli elementi mobile sul Desktop */
+.show-mobile {
+    display: none;
+}
+
+
+/* ================= RESPONSIVE DESIGN (TABLET E SMARTPHONE) ================= */
+
+/* ---------------------------------------------------
+   2. SU TABLET (Sotto i 900px): Diventa un Carosello
+--------------------------------------------------- */
 @media (max-width: 900px) {
-    .hero-section {
-        grid-template-columns: 1fr;
-    }
+    /* ================= CLASSI MAGICHE ================= */
+    /* Nascondiamo tutto ciò che ha la classe hide-mobile */
+    .hide-mobile { display: none !important; }
     
+    /* Mostriamo gli elementi con la classe show-mobile */
+    .show-mobile { display: block !important; }
+
+    /* ================= HEADER MOBILE ================= */
+    .top-bar {
+        position: static !important; 
+        background-color: #031A34 !important; 
+        padding: 12px 10px;
+    }
+
+    /* Centriamo la riga principale */
     .top-bar-flex {
-        flex-direction: column;
-        padding: 15px 30px;
-        gap: 10px;
-    } 
-    
+        display: flex !important;
+        flex-direction: row !important; 
+        justify-content: center !important; 
+        align-items: center !important;
+        flex-wrap: wrap !important; 
+        gap: 20px !important; /* Spazio tra i link di sinistra e il bottone abbonati */
+    }
+
+    /* Stacchiamo le parole Newsletter, Segnala, ecc. */
+    .top-left {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 20px !important; /* Aumentato lo spazio tra i link */
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+    }
+
+    .top-right {
+        display: flex !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Rimuoviamo i bordini puntinati e azzeriamo i margini dei link da PC */
+    .top-left a {
+        font-size: 14px !important;
+        border-left: none !important; /* Via la riga puntinata su mobile */
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+    }
+    /* Rimuoviamo i bordini dai link su mobile */
+    .top-bar a, .top-bar span {
+        font-size: 14px !important;
+        border-left: none !important; 
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    /* ================= LA BARRA DEL LOGO ================= */
     .logo-bar {
-        grid-template-columns: 1fr;
-        gap: 15px;
+        position: sticky !important;
+        top: 0;
+        z-index: 9999;
+        background-color: #073e7c !important; /* Diventa Blu */
+        display: flex !important;
+        flex-direction: row !important; 
+        justify-content: space-between !important; 
+        align-items: center !important;
+        padding: 10px 15px !important;
+        
+        /* Sovrascriviamo la classe container per farla a tutto schermo */
+        width: 100% !important; 
+        max-width: 100% !important; 
+        box-sizing: border-box;
+    } /* <--- AGGIUNTA PARENTESI MANCANTE QUI! */
+
+    .logo-centrale {
+        margin: 0 !important; /* Togliamo il margine automatico per far funzionare lo space-between */
     }
 
-    .meteo, .logo-centrale, .data-oggi {
-        justify-self: center;
+    /* MAGIA LOGO BIANCO: Agisce SOLO su mobile! */
+    h1.logo-testuale {
+        color: #ffffff !important; /* Diventa bianco sul blu */
+        font-size: 28px !important; /* Dimensione mobile */
+        line-height: 28px !important;
     }
 
-    .secondary-section {
-        grid-template-columns: 1fr;
+    .logo-img {
+        width: 128px !important; 
+        height: 28px !important; 
+        filter: brightness(0) invert(1) !important; /* Fa diventare l'immagine bianca */
     }
+
+    /* ================= LAYOUT GENERALE E SLIDER ================= */
+    .hero-section, .secondary-section {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+    
     .card-row {
-        flex-direction: column; /* Impila immagine e testo in verticale su mobile */
+        flex-direction: column; 
     }
-    .card-row img, .card-row-content {
+    
+    .card-row img {
         width: 100%;
+        height: auto;
     }
-    .cards-grid-4 {
-        grid-template-columns: repeat(2, 1fr); /* Diventano 2 colonne affiancate */
-    }
+    
     .footer-promos {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; 
+        gap: 30px;
     }
+
+    /* --- Carosello Tablet --- */
+    .slider-track, .slider-track.cards-grid-4 {
+        display: flex; 
+        overflow: hidden; 
+        scroll-behavior: smooth;
+    }
+    
+    .slider-track > article {
+        flex: 0 0 calc(50% - 12.5px); 
+    }
+
+    .slider-btn {
+        display: flex; 
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 32px;  
+        height: 32px; 
+        border-radius: 50%;
+        background-color: rgba(220, 220, 220, 0.95);
+        border: none;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        cursor: pointer;
+        z-index: 20;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px; 
+        color: #333;
+        transition: background 0.3s;
+    }
+
+    .slider-btn:hover {
+        background-color: #ffffff;
+    }
+
+    /* ================= BARRA DEI TAG (MOBILE) ================= */
+    .nav-bg {
+        padding: 0 !important; /* Rimuove il padding laterale del container per farla a tutto schermo */
+    }
+    
+    .tag-bar {
+        margin: 0 !important; /* Rimuove i margini di 45px che la tenevano staccata dai bordi */
+        border-top: none !important; /* MAGIA: Fa sparire la riga nera spessa 5px! */
+        /* La riga inferiore sottile da 1px (border-bottom) rimarrà intatta e coprirà tutto lo schermo */
+        padding: 10px 5px !important; 
+    }
+
+    .prev-btn { left: -10px; }
+    .next-btn { right: -10px; }
+}
+
+/* ---------------------------------------------------
+   3. SU SMARTPHONE (Sotto i 600px)
+--------------------------------------------------- */
+@media (max-width: 600px) {
+    /* Layout Generale Mobile */
+    
+    /* Separare l'aspect ratio: Video larghi (16:9), Speciali/Rubriche proporzionate (4:3) */
+    .video-card-img img {
+        aspect-ratio: 16 / 9; /* Panoramico per i video */
+    }
+    
+    .dark-card-img img {
+        aspect-ratio: 4 / 3; /* Proporzione perfetta originale L'Arena da mobile */
+    }
+    
+    .grey-wrapper, .video-wrapper {
+        padding: 30px 15px !important; 
+    }
+    
+    .dark-wrapper {
+        padding: 40px 15px !important;
+    }
+    
+    /* Footer */
     .footer-links-row {
         flex-direction: column;
         justify-content: center;
+        padding: 20px 10px;
+        text-align: center;
     }
     .footer-nav {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 10px;
+        margin-bottom: 15px;
     }
-}
+    .footer-actions {
+        flex-direction: column;
+        gap: 20px;
+    }
 
-/* Ulteriore adattamento per schermi molto piccoli (es. cellulari) */
-@media (max-width: 500px) {
-    .cards-grid-4 {
-        grid-template-columns: 1fr; /* 1 colonna singola sui cellulari */
+    /* --- Carosello Smartphone --- */
+    .slider-track > article,
+    .dark-section .slider-track > article {
+        /* 46% permette di far stare 2 card e far "spuntare" il bordo della terza */
+        flex: 0 0 46%; 
     }
+
+    /* Frecce leggermente più interne per non uscire dagli schermi dei cellulari */
+    .prev-btn { left: 0px; }
+    .next-btn { right: 0px; }
 }
