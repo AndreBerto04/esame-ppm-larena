@@ -1,4 +1,3 @@
-/* Base e Layout */
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +10,7 @@ body {
     background-color: #ffffff;
     line-height: 1.4;
     padding-top: 50px;
-    /* Cuscinetto per la barra fixed */
+
 }
 
 .site-header {
@@ -43,7 +42,6 @@ img {
     display: block;
 }
 
-/* ================= TOP BAR (DESKTOP) ================= */
 .top-bar {
     position: fixed !important;
     top: 0;
@@ -98,7 +96,7 @@ img {
     margin-left: 15px;
     padding: 0 0 0 19px;
     border-left: 2px dotted rgb(255, 255, 255);
-    /* La riga puntinata del PC */
+
 }
 
 .top-left a:first-of-type {
@@ -111,7 +109,6 @@ img {
     font-size: 14px;
 }
 
-/* Sottolineatura al passaggio del mouse */
 .top-left a:hover,
 .login-link:hover {
     text-decoration: underline;
@@ -151,15 +148,14 @@ img {
     font-family: "DM Sans", sans-serif;
 }
 
-/* ================= LOGO BAR GIGANTE ================= */
 .logo-bar {
     background-color: #ffffff;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: end;
-    /* Spinge Meteo e Data verso il basso */
+
     padding: 10px 15px 10px 15px;
-    /* Spazio per logo gigante e vicinanza alla barra nera */
+
 }
 
 .meteo {
@@ -190,7 +186,6 @@ img {
     margin-top: 0px;
 }
 
-/* Container del Logo */
 .logo-centrale {
     justify-self: center;
     display: flex;
@@ -198,20 +193,18 @@ img {
     justify-content: center;
 }
 
-/* Testo Gigante per il Logo */
 h1.logo-testuale {
     margin: 0 !important;
     font-family: 'DM Serif Display', serif;
     font-size: 85px !important;
-    /* Misure massicce per sembrare 70px in altezza */
+
     line-height: 1 !important;
     letter-spacing: -3px;
-    /* Lettere accostate */
+
     color: #212529 !important;
     text-align: center;
 }
 
-/* Se usi un'immagine per il logo */
 .logo-img {
     width: 317px !important;
     height: 70px !important;
@@ -239,21 +232,18 @@ h1.logo-testuale {
     line-height: 1;
 }
 
-/* ================= BARRA DEI TAG (DESKTOP: No slider) ================= */
-/* ================= BARRA DEI TAG (DESKTOP: No slider) ================= */
 .tag-slider-wrapper {
     background-color: #f4f4f4;
     border-top: 5px solid #000;
     border-bottom: 1px solid #000;
     margin: 0 45px;
-    /* Staccato dai bordi su PC */
+
     display: block;
     width: auto !important;
-    /* RISOLVE LA FUORIUSCITA A DESTRA! */
+
     box-sizing: border-box;
 }
 
-/* Nascondiamo le frecce su PC */
 .tag-btn {
     display: none !important;
 }
@@ -263,23 +253,21 @@ h1.logo-testuale {
     margin: 0 !important;
 }
 
-/* Su PC i tag stanno al centro e vanno a capo normalmente */
 .tag-track {
     display: flex !important;
     justify-content: center !important;
     flex-wrap: wrap !important;
-    /* Permette di andare a capo */
+
     gap: 6px 15px !important;
     padding: 8px 0 !important;
     width: auto !important;
-    /* Previene fuoriuscite */
+
 }
 
-/* Stile base dei singoli tag */
 .tag,
 .tag-plain {
     flex: 0 1 auto !important;
-    /* Impedisce stiracchiamenti */
+
 }
 
 .tag {
@@ -306,7 +294,6 @@ h1.logo-testuale {
     letter-spacing: -1px;
 }
 
-/* Colori specifici per ogni etichetta */
 .tag-purple {
     background-color: #8121f2;
     color: #fff;
@@ -343,12 +330,11 @@ h1.logo-testuale {
 
 .slashes {
     color: #1a427b;
-    /* Blu per i trattini */
+
     font-weight: bold;
     letter-spacing: -1px;
 }
 
-/* Colori specifici per ogni etichetta */
 .tag-purple {
     background-color: #8121f2;
     color: #fff;
@@ -361,7 +347,12 @@ h1.logo-testuale {
 
 .tag-gold {
     background-color: #ceaa49;
-    color: #fff;
+    color: #222222 !important;
+}
+
+.tag-yellow {
+    background-color: #fed93e;
+    color: #222222 !important;
 }
 
 .tag-green {
@@ -369,23 +360,43 @@ h1.logo-testuale {
     color: #fff;
 }
 
-.tag-yellow {
-    background-color: #fed93e;
-    color: #fff;
+@media (min-width: 901px) {
+    .tag-gold:hover {
+        background-color: #222222 !important;
+        color: #ceaa49 !important;
+    }
+
+    .tag-yellow:hover {
+        background-color: #222222 !important;
+        color: #fed93e !important;
+    }
 }
 
-/* Forza l'ultimo tag ad andare a capo centrato */
+.badge-blue,
+.dark-card-img span {
+    background-color: #112b59 !important;
+
+    color: #ffffff !important;
+
+}
+
+.vai-speciale,
+.vai-speciale a {
+    color: #333333 !important;
+
+    font-weight: bold;
+}
+
 .break-line {
     flex-basis: auto !important;
     justify-content: center;
 }
 
-/* Main Content e Griglia Notizie */
 .main-content {
     padding-top: 30px;
     padding-bottom: 60px;
     background-color: #f4f4f4;
-    /* <-- Era bianco, ora è grigio! */
+
 }
 
 .hero-section {
@@ -429,7 +440,6 @@ h1.logo-testuale {
     display: block;
 }
 
-
 .card-grigia {
     background-color: #e6e5e5;
     margin-top: 30px;
@@ -460,7 +470,7 @@ h1.logo-testuale {
 
 .label-small {
     color: #073e7c;
-    /* Blu L'Arena */
+
     font-family: 'DM Sans', sans-serif;
     font-size: 12px;
     font-weight: bold;
@@ -472,50 +482,48 @@ h1.logo-testuale {
     padding: 20px;
 }
 
-/* ================= SEZIONE SECONDARIA ================= */
 .secondary-section {
     display: grid;
     grid-template-columns: 2.3fr 1fr;
-    /* Stessa identica proporzione della Hero Section! */
+
     gap: 40px;
     margin: 0 auto 0 auto;
-    /* 'auto' a destra e sinistra la centra perfettamente */
+
     max-width: 1100px;
-    /* Se vedi che è ancora larga, scendi a 980px o 950px finché non combacia col top! */
+
     padding: 0 0 60px 0;
     background-color: #f4f4f4;
 }
 
-/* --- Card Orizzontali (Sinistra) --- */
 .news-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* Spazio tra una riga e l'altra */
+
 }
 
 .card-row {
     display: flex;
-    /* Mette immagine e testo sulla stessa riga */
+
     background-color: #fff;
     align-items: stretch;
-    /* Fa sì che la scatola del testo sia alta quanto l'immagine */
+
 }
 
 .card-row img {
     width: 40%;
-    /* L'immagine prende il 40% dello spazio */
+
     object-fit: cover;
 }
 
 .card-row-content {
     width: 60%;
-    /* Il testo prende il restante 60% */
+
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Centra verticalmente il testo */
+
 }
 
 .card-row-content h2 {
@@ -529,10 +537,9 @@ h1.logo-testuale {
     font-size: 13px;
     color: #333;
     margin-top: auto;
-    /* Spinge l'autore verso il basso se c'è spazio vuoto */
+
 }
 
-/* Variante Sfondo Blu (Es. Gsk) */
 .card-blue {
     background-color: #0d3b66;
     color: #fff;
@@ -540,15 +547,14 @@ h1.logo-testuale {
 
 .card-blue .author {
     color: #ccc;
-    /* Autore grigio chiaro sul blu */
+
 }
 
 .label-white {
     color: #fff !important;
-    /* Etichetta bianca sul fondo blu */
+
 }
 
-/* --- Spalla e Sondaggio (Destra) --- */
 .secondary-sidebar {
     display: flex;
     flex-direction: column;
@@ -561,7 +567,7 @@ h1.logo-testuale {
 
 .poll-image {
     position: relative;
-    /* Fondamentale per posizionare l'etichetta sopra */
+
 }
 
 .poll-image img {
@@ -572,10 +578,10 @@ h1.logo-testuale {
 .poll-badge {
     position: absolute;
     bottom: -12px;
-    /* Sporge un po' fuori dalla foto verso il basso */
+
     left: 20px;
     background-color: #0d3b66;
-    /* Blu scuro */
+
     color: #fff;
     font-family: Arial, sans-serif;
     font-size: 12px;
@@ -618,7 +624,7 @@ h1.logo-testuale {
     font-size: 14px;
     cursor: pointer;
     align-self: flex-start;
-    /* Evita che il bottone diventi largo quanto tutta la colonna */
+
     margin-top: 10px;
     border-radius: 3px;
 }
@@ -636,7 +642,6 @@ h1.logo-testuale {
     color: #0d3b66;
 }
 
-/* ================= SEZIONE SCURA (SPECIALI E RUBRICHE) ================= */
 .dark-wrapper {
     background-color: #333333;
     padding: 40px 80px;
@@ -680,12 +685,11 @@ h1.logo-testuale {
 .dark-card-img img {
     width: 100%;
     aspect-ratio: 4 / 3;
-    /* Proporzione esatta della foto originale */
+
     object-fit: cover;
     display: block;
 }
 
-/* Etichetta blu col parallelogramma sempre visibile */
 .badge-blue {
     position: absolute;
     bottom: -12px;
@@ -693,7 +697,7 @@ h1.logo-testuale {
     color: #ffffff;
     font-family: "DM sans", sans-serif;
     font-size: 12px;
-    /* Leggermente rimpicciolita per farcela stare bene */
+
     padding: 5px 12px;
     text-transform: uppercase;
     z-index: 10;
@@ -713,40 +717,37 @@ h1.logo-testuale {
 
 .dark-card-text {
     padding: 20px 15px 15px 15px;
-    /* Lascia un po' di spazio in alto per il parallelogramma */
+
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    /* Spinge il box fino in fondo per pareggiare le altezze */
+
     background-color: #ffffff;
-    /* Sfondo bianco, confermato dall'inspector */
+
 }
 
 .dark-card-text h3 {
     font-family: "DM Sans", sans-serif;
-    /* Rivelato dall'inspector! */
+
     font-size: 16px;
-    /* Dimensione esatta */
+
     color: #212529;
-    /* Colore esatto */
+
     font-weight: 700;
-    /* Grassetto per i titoli delle notizie */
+
     line-height: 1.3em;
-    /* Distanza tra le righe per un'ottima leggibilità */
+
     margin: 0;
 
-    /* Manteniamo il blocco delle righe per allineare le card, 
-       ma lo alziamo a 4 righe visto che i titoli sono lunghi */
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     padding-bottom: 8px;
-    /* Spazio per la sottolineatura dell'ultima riga */
+
+    height: calc(1.3em * 4 + 8px);
 }
 
-/* ================= REGOLE TIPOGRAFICHE GLOBALI ================= */
-/* Applichiamo il Sans-Serif ai testi generici, autori, etichette */
 body,
 .label,
 .label-small,
@@ -757,7 +758,6 @@ nav a {
     font-family: 'DM Sans', sans-serif;
 }
 
-/* Applichiamo il Serif ai titoli delle notizie */
 h1,
 h2,
 h3,
@@ -766,20 +766,18 @@ h3,
     font-family: 'DM Serif Display', serif;
 }
 
-
-/* ================= FASCIA GRIGIA (TOP 500) ================= */
 .grey-wrapper {
     background-color: #d9d9d9;
     max-width: 1100px;
-    /* Usa ESATTAMENTE lo stesso numero che hai messo in .secondary-section */
+
     margin: 0 auto 0 auto;
-    /* Via i margini negativi! L' 'auto' la tiene al centro */
+
     padding: 40px 30px;
 }
 
 .section-header-red h2 {
     color: #cc0000;
-    /* Rosso scuro */
+
     font-size: 32px;
     margin-bottom: 25px;
     border-bottom: 1px solid #555;
@@ -791,8 +789,6 @@ h3,
     font-weight: normal;
 }
 
-
-/* ================= FOOTER ================= */
 .site-footer {
     background-color: #fafafa;
     padding: 40px 15px;
@@ -803,26 +799,25 @@ h3,
 
 .footer-container {
     max-width: 1000px;
-    /* Stessa larghezza delle notizie sopra! */
+
     margin: 0 auto;
 }
 
-/* 3 Colonne Promozionali */
 .footer-promos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-bottom: 40px;
     border-top: 2px dotted #000000;
-    /* La famosa riga tratteggiata! */
+
     padding-top: 30px;
-    /* Spazio tra la riga e i titoli */
+
 }
 
 .promo-title {
     font-family: 'DM Serif Display', serif;
     font-size: 30px;
-    /* Dimensione richiesta */
+
     color: #073e7c;
     margin-bottom: 20px;
     text-align: left;
@@ -843,24 +838,24 @@ h3,
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Centra gli elementi interni */
+
 }
 
 .promo-img-bg {
     background-color: #f0f0f0;
     width: 100%;
     height: 180px;
-    /* L'ho abbassato ancora di più (da 220px a 180px) */
+
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 5px;
-    /* Ridotto lo spazio sotto il grigio */
+
 }
 
 .promo-img-bg img {
     max-height: 130px;
-    /* Immagini leggermente più piccole */
+
     width: auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
@@ -883,12 +878,11 @@ h3,
 .promo-item-title {
     font-family: 'DM Serif Display', serif;
     font-size: 18px;
-    /* Font leggermente più piccolo per proporzione */
+
     margin: 10px 0 15px 0;
     color: #000;
 }
 
-/* Box Blu del Quotidiano */
 .promo-box-blue {
     background-color: #073e7c;
     width: 100%;
@@ -904,7 +898,7 @@ h3,
 
 .promo-box-blue img {
     max-height: 130px;
-    /* Stessa altezza massima delle altre copertine */
+
     width: auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -992,11 +986,10 @@ h3,
 
 .link-necro {
     color: #073e7c;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
 }
 
-/* Loghi e Copyright */
 .footer-bottom {
     display: flex;
     flex-direction: column;
@@ -1029,7 +1022,6 @@ h3,
     margin: 0;
 }
 
-/* --- Box Citazione (Spalla) --- */
 .quote-box {
     background-color: #073e7c;
     color: #fff;
@@ -1065,7 +1057,6 @@ h3,
     line-height: 1.3;
 }
 
-/* --- Modifiche Fascia Grigia (Top 500) --- */
 .wrapper-footer-link {
     text-align: right;
     margin-top: 20px;
@@ -1085,11 +1076,10 @@ h3,
 .wrapper-footer-link a:hover span {
     text-decoration: underline;
     text-underline-offset: 4px;
-    /* Abbassa un po' la linea per non tagliare le lettere */
+
     text-decoration-thickness: 1px;
 }
 
-/* Icona Play Sulle Immagini */
 .play-icon-overlay {
     position: absolute;
     bottom: 10px;
@@ -1110,24 +1100,23 @@ h3,
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
     border-left: 10px solid #cc0000;
-    /* Triangolino rosso */
+
     margin-left: 3px;
-    /* Centra visivamente il triangolo */
+
 }
 
-/* --- Fascia Video (Scuro) --- */
 .video-wrapper {
     background-color: #333333;
     max-width: 1100px;
-    /* Usa ESATTAMENTE lo stesso numero */
+
     margin: 0 auto;
-    /* Via i margini negativi, perfettamente centrata */
+
     padding: 40px 30px;
 }
 
 .video-card {
     background-color: #222222;
-    /* Sfondo scuro per la singola card video */
+
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -1140,23 +1129,22 @@ h3,
 .video-card-img img {
     width: 100%;
     aspect-ratio: 16 / 9;
-    /* Formato rettangolare classico, perfetto per i video e le news */
+
     object-fit: cover;
     display: block;
 }
 
-/* Il numerino tondo in alto a destra */
 .video-number {
     position: absolute;
     top: -15px;
-    /* La fa sporgere a metà fuori dal bordo superiore */
+
     right: 10px;
-    /* La tiene leggermente rientrata dal bordo destro */
+
     width: 36px;
-    /* Cerchio molto più grande */
+
     height: 36px;
     background-color: #073e7c;
-    /* Blu L'Arena */
+
     color: #fff;
     border-radius: 50%;
     display: flex;
@@ -1164,7 +1152,7 @@ h3,
     align-items: center;
     font-family: 'DM Serif Display', serif;
     font-size: 20px;
-    /* Numero molto più grande e visibile */
+
     font-weight: bold;
     z-index: 10;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -1175,7 +1163,7 @@ h3,
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Spinge la durata in fondo se presente */
+
     gap: 8px;
     flex-grow: 1;
 }
@@ -1184,20 +1172,19 @@ h3,
     font-family: 'DM Serif Display', serif;
     font-size: 16px;
     line-height: 1.3em;
-    /* Altezza riga definita */
+
     margin: 0;
     color: #fff;
 
-    /* MAGIA: Blocca il testo a 2 righe esatte per uniformare tutte le card! */
     display: -webkit-box;
     -webkit-line-clamp: 2;
-    /* Numero massimo di righe */
+
     -webkit-box-orient: vertical;
     overflow: hidden;
     padding-bottom: 8px;
-    /* Spazio per la sottolineatura offset */
+
     height: calc(1.3em * 2 + 8px);
-    /* Blocca l'altezza fissa a 2 righe + spazio */
+
 }
 
 .video-duration {
@@ -1206,15 +1193,11 @@ h3,
     color: #cccccc;
 }
 
-/* ================= CAROSELLO SLIDER E RESPONSIVE ================= */
-
-/* Il contenitore principale che "abbraccia" bottoni e griglia */
 .slider-wrapper {
     position: relative;
     width: 100%;
 }
 
-/* --- 1. SU DESKTOP: Griglia fissa a 4 colonne, bottoni nascosti --- */
 .slider-track {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1222,24 +1205,19 @@ h3,
     padding: 10px 0;
 }
 
-/* Assicura che la classe vecchia non rompa la nuova griglia */
 .slider-track.cards-grid-4 {
     grid-template-columns: repeat(4, 1fr);
     display: grid;
 }
 
-/* Nascondiamo completamente i bottoni su PC */
 .slider-btn {
     display: none;
 }
 
-/* Nasconde gli elementi mobile sul Desktop */
 .show-mobile {
     display: none;
 }
 
-/* ================= FIX SOTTOLINEATURA MULTIRIGA ================= */
-/* Forza i link dei titoli a comportarsi come testo continuo per non spezzare la linea quando vanno a capo */
 h2 a,
 h3 a,
 .titolo a,
@@ -1251,8 +1229,6 @@ a .title {
     display: inline !important;
 }
 
-/* ================= FIX SOTTOLINEATURA MULTIRIGA ================= */
-/* Esteso a TUTTI i titoli (incluso h1) e classi specifiche per comportarsi come testo continuo */
 h1 a,
 h2 a,
 h3 a,
@@ -1269,19 +1245,15 @@ a h5,
 a h6,
 a .titolo,
 a .title,
-/* Nuovi selettori generici per assicurare display: inline */
+
 .video-card a,
 .video-card .titolo {
     display: inline !important;
 
-    /* MAGIA ASSOLUTA: Forza la linea a replicarsi perfettamente su ogni riga quando va a capo! */
     -webkit-box-decoration-break: clone !important;
     box-decoration-break: clone !important;
 }
 
-
-/* ================= STILE BASE LINK TITOLI ================= */
-/* Assicura che i link prendano il colore giusto (bianco o nero) e non siano sottolineati di base */
 h1 a,
 h2 a,
 h3 a,
@@ -1294,8 +1266,6 @@ h6 a,
     text-decoration: none !important;
 }
 
-/* ================= EFFETTO HOVER TITOLI ARTICOLI ================= */
-/* Sottolinea SOLO il testo del link quando passi il mouse sulla card */
 h1 a:hover,
 h2 a:hover,
 h3 a:hover,
@@ -1311,11 +1281,9 @@ article:hover h3 a,
     text-decoration-thickness: 2px !important;
     text-underline-offset: 5px !important;
     text-decoration-skip-ink: auto !important;
-    /* Mantiene il salto elegante sulle p e g */
+
 }
 
-/* ================= EFFETTO HOVER MENU E FOOTER ================= */
-/* Questo lo teniamo perché funzionava già alla perfezione! */
 .top-left a:hover,
 .top-right a:not(.btn-abbonati):hover,
 footer a:hover,
@@ -1328,42 +1296,30 @@ footer a:hover,
     text-decoration-color: #073e7c !important;
 }
 
-/* ================= RESPONSIVE DESIGN (TABLET E SMARTPHONE) ================= */
-
-/* ---------------------------------------------------
-   2. SU TABLET (Sotto i 900px): Diventa un Carosello
---------------------------------------------------- */
 @media (max-width: 900px) {
 
-    /* ================= CLASSI MAGICHE ================= */
-    /* Nascondiamo tutto ciò che ha la classe hide-mobile */
     .hide-mobile {
         display: none !important;
     }
 
-    /* Mostriamo gli elementi con la classe show-mobile */
     .show-mobile {
         display: block !important;
     }
-
 
     body {
         padding-top: 0 !important;
     }
 
-
-    /* ================= HEADER MOBILE ================= */
     .top-bar {
         position: static !important;
         background-color: #031A34 !important;
         padding: 0 16px !important;
-        /* Tolto il padding verticale per usare solo l'altezza */
+
         height: 48px !important;
-        /* ALTEZZA FISSA */
+
         box-sizing: border-box !important;
     }
 
-    /* Struttura principale della barra blu */
     .top-bar-flex {
         display: flex !important;
         flex-direction: row !important;
@@ -1371,30 +1327,29 @@ footer a:hover,
         align-items: center !important;
         width: 100% !important;
         height: 100% !important;
-        /* Si adatta perfettamente ai 48px */
+
     }
 
     .logo-bar .show-mobile {
         font-size: 28px !important;
-        /* Imposta l'altezza esatta a 28px */
+
         width: 24.5px !important;
-        /* Forza la larghezza esatta richiesta */
+
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
     }
 
-    /* I 3 link (Newsletter, Segnala, Necrologie) si distribuiscono in modo arioso */
     .top-left {
         display: contents !important;
         flex-direction: row !important;
         align-items: center !important;
         justify-content: space-around !important;
-        /* MAGIA: Ricrea la spaziatura perfetta della tua foto! */
+
         flex-grow: 1 !important;
-        /* Fa allargare i link su tutto lo spazio disponibile */
+
         margin-right: 15px !important;
-        /* Lascia un po' di spazio prima del bottone Abbonati */
+
         padding: 0 !important;
         border: none !important;
     }
@@ -1405,13 +1360,10 @@ footer a:hover,
         padding: 0 !important;
     }
 
-
-    /* Forza la scomparsa assoluta dei link che non ci servono su mobile */
     .top-left a.hide-mobile {
         display: none !important;
     }
 
-    /* Stile e centramento SOLO per i 3 link rimasti (Newsletter, Segnala, Necrologie) */
     .top-left a:not(.hide-mobile) {
         font-family: "DM Sans", sans-serif !important;
         font-size: 14px !important;
@@ -1426,20 +1378,19 @@ footer a:hover,
         justify-content: center !important;
         line-height: 1 !important;
         height: 100% !important;
-        /* Usa tutta l'altezza per centrarsi */
+
     }
 
-    /* Il bottone Abbonati precisissimo (77x26) */
     .btn-abbonati {
         background-color: #FFE500 !important;
-        /* Il giallo esatto dell'ispettore */
+
         color: #000000 !important;
         font-family: "DM Sans", sans-serif !important;
         font-size: 14px !important;
         padding: 2px 8px !important;
-        /* Padding esatto 1.6px 8px arrotondato */
+
         height: 26px !important;
-        /* Altezza esatta */
+
         border-radius: 3px !important;
         display: flex !important;
         align-items: center !important;
@@ -1459,9 +1410,8 @@ footer a:hover,
         align-items: center !important;
 
         padding: 0 16px !important;
-        /* Togliamo il padding verticale per affidarci all'altezza fissa */
+
         height: 48px !important;
-        /* ALTEZZA IDENTICA ALLA BARRA SOPRA! */
 
         width: 100% !important;
         max-width: 100% !important;
@@ -1470,30 +1420,26 @@ footer a:hover,
 
     .logo-centrale {
         margin: 0 !important;
-        /* Togliamo il margine automatico per far funzionare lo space-between */
+
     }
 
-
-    /* MAGIA LOGO BIANCO: Agisce SOLO su mobile! */
     h1.logo-testuale {
         color: #ffffff !important;
         font-size: 34px !important;
-        /* 34px di font-size crea un ingombro visivo alto esattamente 28px! */
+
         line-height: 28px !important;
         letter-spacing: -1px !important;
     }
 
-    /* Se invece stai usando il tag <img> per il logo */
     .logo-img {
         width: 128px !important;
-        /* Misura esatta dall'inspector */
+
         height: 28px !important;
-        /* Misura esatta dall'inspector */
+
         filter: brightness(0) invert(1) !important;
-        /* Lo fa diventare bianco */
+
     }
 
-    /* ================= LAYOUT GENERALE E SLIDER ================= */
     .hero-section,
     .secondary-section {
         grid-template-columns: 1fr;
@@ -1514,7 +1460,6 @@ footer a:hover,
         gap: 30px;
     }
 
-    /* --- Carosello Tablet --- */
     .slider-track,
     .slider-track.cards-grid-4 {
         display: flex;
@@ -1550,48 +1495,43 @@ footer a:hover,
         background-color: #ffffff;
     }
 
-    /* ================= BARRA DEI TAG (MOBILE) ================= */
     .nav-bg {
         padding: 0 !important;
-        /* Rimuove il padding laterale del container per farla a tutto schermo */
+
     }
 
     .tag-bar {
         margin: 0 !important;
-        /* Rimuove i margini di 45px che la tenevano staccata dai bordi */
+
         border-top: none !important;
-        /* MAGIA: Fa sparire la riga nera spessa 5px! */
-        /* La riga inferiore sottile da 1px (border-bottom) rimarrà intatta e coprirà tutto lo schermo */
+
         padding: 10px 5px !important;
     }
 
-    /* ================= BARRA DEI TAG SLIDER (SOLO MOBILE) ================= */
     .nav-bg {
         padding: 0 !important;
     }
 
     .tag-slider-wrapper {
         margin: 0 !important;
-        /* A tutto schermo su mobile */
+
         border-top: none !important;
-        /* Fa sparire la riga nera spessa in alto */
+
         display: flex !important;
         align-items: center !important;
         overflow: hidden !important;
-        /* Taglia fuori i tag che escono */
+
     }
 
     .tag-track {
         flex-wrap: nowrap !important;
-        /* DIVENTA UNO SLIDER: vieta di andare a capo! */
-        justify-content: flex-start !important;
-        /* Allinea a sinistra per poter scorrere */
-        overflow-x: auto !important;
-        /* Abilita lo scorrimento col dito */
-        padding: 8px 15px !important;
-        /* Spazio laterale per far respirare le frecce */
 
-        /* Nasconde la barra di scorrimento brutta del browser */
+        justify-content: flex-start !important;
+
+        overflow-x: auto !important;
+
+        padding: 8px 15px !important;
+
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
@@ -1600,20 +1540,18 @@ footer a:hover,
         display: none;
     }
 
-    /* Impedisce ai bottoni dei tag di "schiacciarsi" se lo schermo è piccolo */
     .tag-track .tag,
     .tag-track .tag-plain {
         flex-shrink: 0 !important;
     }
 
-    /* ================= FRECCE DELLO SLIDER TAG (SOLO MOBILE) ================= */
     .tag-btn {
         display: flex !important;
         position: absolute;
         top: 20px !important;
-        /* <--- MAGIA: Sposta in giù TUTTO (Freccia + Nebbia) */
+
         height: calc(100% - 20px) !important;
-        /* Ricalcola l'altezza per non sbordare di sotto */
+
         width: 35px !important;
         border-radius: 0 !important;
         box-shadow: none !important;
@@ -1625,11 +1563,9 @@ footer a:hover,
         border: none;
     }
 
-    /* ELIMINA il vecchio blocco .tag-btn i con il translateY! Non serve più. */
-
     .tag-slider-wrapper .prev-btn {
         left: 0px !important;
-        /* Ho integrato il tuo valore corretto */
+
         background: linear-gradient(90deg, #f4f4f4 40%, transparent) !important;
         justify-content: flex-start;
         padding-left: 5px;
@@ -1637,28 +1573,23 @@ footer a:hover,
 
     .tag-slider-wrapper .next-btn {
         right: 0px !important;
-        /* Ho integrato il tuo valore corretto */
+
         background: linear-gradient(270deg, #f4f4f4 40%, transparent) !important;
         justify-content: flex-end;
         padding-right: 5px;
     }
 }
 
-/* ---------------------------------------------------
-   3. SU SMARTPHONE (Sotto i 600px)
---------------------------------------------------- */
 @media (max-width: 600px) {
-    /* Layout Generale Mobile */
 
-    /* Separare l'aspect ratio: Video larghi (16:9), Speciali/Rubriche proporzionate (4:3) */
     .video-card-img img {
         aspect-ratio: 16 / 9;
-        /* Panoramico per i video */
+
     }
 
     .dark-card-img img {
         aspect-ratio: 4 / 3;
-        /* Proporzione perfetta originale L'Arena da mobile */
+
     }
 
     .grey-wrapper,
@@ -1670,34 +1601,44 @@ footer a:hover,
         padding: 40px 15px !important;
     }
 
-    /* Footer */
     .footer-links-row {
         flex-direction: column;
         justify-content: center;
-        padding: 20px 10px;
+        padding: 20px 15px;
         text-align: center;
+        margin-left: -15px;
+        margin-right: -15px;
+        border-top: 4px solid #000;
+        border-bottom: 2px dotted #000;
+    }
+
+    .promo-box-blue {
+        margin-left: -15px;
+        margin-right: -15px;
+        width: calc(100% + 30px);
     }
 
     .footer-nav {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 25px;
         margin-bottom: 15px;
     }
 
     .footer-actions {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
     }
 
-    /* --- Carosello Smartphone --- */
     .slider-track>article,
     .dark-section .slider-track>article {
-        /* 46% permette di far stare 2 card e far "spuntare" il bordo della terza */
+
         flex: 0 0 46%;
     }
 
-    /* Frecce leggermente più interne per non uscire dagli schermi dei cellulari */
     .prev-btn {
         left: 0px;
     }
@@ -1707,27 +1648,22 @@ footer a:hover,
     }
 }
 
-/* ================= EFFETTI HOVER DEI TAG (SOLO DESKTOP) ================= */
 @media (min-width: 901px) {
 
-    /* Aggiungiamo una transizione morbida di 0.2 secondi */
     .tag {
         transition: all 0.2s ease-in-out;
     }
 
-    /* 1. HOVER TAG GRIGI (es. FILOBUS): Sfondo grigio, scritte bianche */
     .tag-plain:hover {
         background-color: #cccccc !important;
-        /* Grigio esatto dell'immagine */
+
         color: #ffffff !important;
     }
 
-    /* Anche i trattini "///" blu devono diventare bianchi al passaggio del mouse */
     .tag-plain:hover .slashes {
         color: #ffffff !important;
     }
 
-    /* 2. HOVER TAG COLORATI (es. PODCAST): Sfondo bianco, scritte e icone colorate */
     .tag-purple:hover {
         background-color: #ffffff !important;
         color: #8121f2 !important;
