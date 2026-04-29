@@ -1310,6 +1310,10 @@ footer a:hover,
         padding-top: 0 !important;
     }
 
+    .site-header {
+        display: contents;
+    }
+
     .top-bar {
         position: static !important;
         background-color: #031A34 !important;
@@ -1400,10 +1404,8 @@ footer a:hover,
     }
 
     .logo-bar {
-        position: fixed !important;
+        position: sticky !important;
         top: 0;
-        left: 0;
-        right: 0;
         z-index: 9999;
         background-color: #073e7c !important;
         display: flex !important;
