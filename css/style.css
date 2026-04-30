@@ -1554,13 +1554,65 @@ footer a:not(.logo-placeholder):hover,
         display: flex !important;
         background-color: #f4f4f4 !important;
         border-bottom: none !important;
-        padding: 10px 15px !important;
-        min-height: 60px;
+        padding: 15px 45px 0 45px !important;
+        /* Ridotto lo spazio laterale da 85px a 45px */
+        min-height: 50px;
         margin-bottom: 0 !important;
+        justify-content: space-between !important;
+        align-items: flex-end !important;
+    }
+
+    .mobile-header-large .citta {
+        display: none !important;
+    }
+
+    .mobile-header-large .meteo-small i {
+        transform: translateY(-3px) !important;
+        /* Alza leggermente il simbolo */
     }
 
     .nav-bg {
         margin-top: 0 !important;
+        background-color: #f4f4f4 !important;
+    }
+
+    .tag-slider-wrapper {
+        margin: 0 !important;
+        padding: 5px 122px 10px 122px !important;
+        /* Ricalcolato: 45px (bordo) + 37px (1/20) + 40px (freccia) */
+        border: none !important;
+        background-color: transparent !important;
+        position: relative !important;
+        width: 100% !important;
+        max-width: none !important;
+        display: block !important;
+        min-height: 40px;
+        box-sizing: border-box !important;
+    }
+
+    /* La barra spessa sopra */
+    .tag-slider-wrapper::before {
+        content: "" !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 45px !important;
+        /* Ridotto a 45px */
+        right: 45px !important;
+        height: 5px !important;
+        background-color: #000000 !important;
+        display: block !important;
+    }
+
+    /* La barra sottile sotto */
+    .tag-slider-wrapper::after {
+        content: "" !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 45px !important;
+        right: 45px !important;
+        height: 1px !important;
+        background-color: #000000 !important;
+        display: block !important;
     }
 
     .logo-centrale {
@@ -1674,13 +1726,10 @@ footer a:not(.logo-placeholder):hover,
 
     .tag-track {
         flex-wrap: nowrap !important;
-
         justify-content: flex-start !important;
-
         overflow-x: auto !important;
-
-        padding: 8px 45px !important;
-
+        padding: 8px 0 !important;
+        /* Rimosso padding laterale perché già gestito dal wrapper (85px) */
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
@@ -1708,20 +1757,19 @@ footer a:not(.logo-placeholder):hover,
         z-index: 100 !important;
         align-items: center !important;
         justify-content: center !important;
-        background: #f4f4f4 !important;
+        background: transparent !important;
+        /* Trasparente per non tagliare le sbarre */
         border: none !important;
         transform: none !important;
-
     }
 
-    .tag-slider-wrapper .prev-btn {
-        left: 0 !important;
-        border-right: 1px solid #ddd;
+    .tag-btn.prev-btn {
+        left: 82px !important;
+        /* 45px + 37px */
     }
 
-    .tag-slider-wrapper .next-btn {
-        right: 0 !important;
-        border-left: 1px solid #ddd;
+    .tag-btn.next-btn {
+        right: 82px !important;
     }
 
     .footer-links-row {
@@ -1768,9 +1816,63 @@ footer a:not(.logo-placeholder):hover,
         display: none !important;
     }
 
-    .tag {
-        padding: 4px 8px !important;
-        font-size: 11px !important;
+    /* Ripristino stile mobile precedente per i tag */
+    .tag-slider-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+        border-top: none !important;
+        border-bottom: none !important;
+        /* Rimosso bordo full-width */
+        background-color: #f4f4f4 !important;
+        position: relative !important;
+    }
+
+    /* La barra sottile sotto (accorciata) */
+    .tag-slider-wrapper::after {
+        content: "" !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 25px !important;
+        /* Parte insieme alla prima sezione */
+        right: 25px !important;
+        /* Solita distanza dal bordo dx */
+        height: 1px !important;
+        background-color: #000000 !important;
+        display: block !important;
+    }
+
+    .tag-slider-wrapper::before {
+        display: none !important;
+    }
+
+    .tag-track {
+        padding: 8px 25px !important; /* Simmetrico: 25px a sx e 25px a dx */
+    }
+
+    .tag-btn {
+        width: 35px !important;
+        height: 30px !important; /* Ridotto verticalmente */
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        background: transparent !important;
+    }
+
+    .tag-btn.prev-btn {
+        left: 25px !important;
+        transition: opacity 0.3s !important;
+    }
+
+    .tag-btn.next-btn {
+        right: 25px !important;
+        /* Sfumatura per non far passare il testo sotto la freccia dx */
+        background: linear-gradient(to left, rgba(244, 244, 244, 1) 60%, rgba(244, 244, 244, 0)) !important;
+        transition: opacity 0.3s !important;
+    }
+
+    /* La classe 'hidden' verrà gestita via JS */
+    .tag-btn.hidden {
+        opacity: 0 !important;
+        pointer-events: none !important;
     }
 
     .nav-bg,
@@ -1830,8 +1932,7 @@ footer a:not(.logo-placeholder):hover,
 
     .slider-track>article,
     .dark-section .slider-track>article {
-
-        flex: 0 0 46%;
+        flex: 0 0 31% !important;
     }
 
     .prev-btn {
