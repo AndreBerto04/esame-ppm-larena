@@ -1806,7 +1806,7 @@ footer a:not(.logo-placeholder):hover,
     }
 }
 
-@media (max-width: 828px) {
+@media (max-width: 827px) {
 
     .hide-small,
     .mobile-header-large.hide-small,
@@ -1846,12 +1846,14 @@ footer a:not(.logo-placeholder):hover,
     }
 
     .tag-track {
-        padding: 8px 25px !important; /* Simmetrico: 25px a sx e 25px a dx */
+        padding: 8px 25px !important;
+        /* Simmetrico: 25px a sx e 25px a dx */
     }
 
     .tag-btn {
         width: 35px !important;
-        height: 30px !important; /* Ridotto verticalmente */
+        height: 30px !important;
+        /* Ridotto verticalmente */
         top: 50% !important;
         transform: translateY(-50%) !important;
         background: transparent !important;
@@ -1896,6 +1898,7 @@ footer a:not(.logo-placeholder):hover,
 
     /* Sotto i 608px, tutto a larghezza piena per coprire i lati */
     @media (max-width: 608px) {
+
         .nav-bg,
         main,
         .main-content,
@@ -1922,21 +1925,24 @@ footer a:not(.logo-placeholder):hover,
         }
 
         .dark-section .slider-track>article {
-            flex: 0 0 42% !important; /* Mostra 2 card e un pezzetto della terza */
+            flex: 0 0 42% !important;
+            /* Mostra 2 card e un pezzetto della terza */
         }
 
         .slider-wrapper {
-            padding: 0 20px !important; /* Meno spazio laterale */
+            padding: 0 20px !important;
+            /* Meno spazio laterale */
         }
 
         .dark-card h3 {
-            font-size: 16px !important; /* Leggermente più piccolo per far stare più testo */
+            font-size: 16px !important;
+            /* Leggermente più piccolo per far stare più testo */
         }
 
         .card-row-content h2 {
             font-size: 22px !important;
         }
-        
+
         .dark-section {
             padding-left: 0 !important;
             padding-right: 0 !important;
@@ -1979,16 +1985,19 @@ footer a:not(.logo-placeholder):hover,
 
     .slider-track>article,
     .dark-section .slider-track>article {
-        flex: 0 0 45% !important; /* 2 card su tablet stretto/mobile largo */
+        flex: 0 0 45% !important;
+        /* 2 card su tablet stretto/mobile largo */
     }
 
     .dark-card h3 {
-        font-size: 18px !important; /* Notizie più grandi */
+        font-size: 18px !important;
+        /* Notizie più grandi */
         line-height: 1.3 !important;
     }
 
     .card-row-content h2 {
-        font-size: 26px !important; /* Notizie più grandi */
+        font-size: 26px !important;
+        /* Notizie più grandi */
     }
 
     .prev-btn {
@@ -2041,23 +2050,27 @@ footer a:not(.logo-placeholder):hover,
         display: flex !important;
     }
 }
+
 /* --- OVERLAY MENU --- */
 .nav-overlay {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 1150px;
+    left: 0 !important;
+    width: calc(100% - 230px);
     height: 100%;
-    background-color: #fff; /* Base bianca */
+    background-color: #fff;
+    /* Base bianca */
     z-index: 10000;
-    display: none; /* Inizialmente nascosto */
+    display: none;
+    /* Inizialmente nascosto */
     overflow-y: auto;
     font-family: "DM Sans", sans-serif;
-    box-shadow: 10px 0 50px rgba(0,0,0,0.3);
+    box-shadow: 10px 0 50px rgba(0, 0, 0, 0.3);
 }
 
 .overlay-top-bar {
-    height: 48px; /* Esattamente 48px */
+    height: 48px;
+    /* Esattamente 48px */
     background-color: #ffffff;
     display: flex;
     justify-content: center;
@@ -2070,7 +2083,7 @@ footer a:not(.logo-placeholder):hover,
 
 .overlay-content-area {
     background: linear-gradient(to bottom, #f7f7f7 0%, #ffffff 15%, #ffffff 85%, #f7f7f7 100%);
-    padding: 0 40px 40px 40px;
+    padding: 0 25px 40px 25px; /* Margini ridotti per espandere ricerca e contenuti */
     min-height: calc(100% - 48px);
 }
 
@@ -2082,7 +2095,7 @@ body.menu-open::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 9999;
 }
 
@@ -2117,22 +2130,28 @@ body.menu-open::before {
     transform: translateY(-50%);
     background: none;
     border: none;
-    font-size: 26px; /* Dimensione bilanciata */
-    font-weight: 900; /* Massimo spessore */
+    font-size: 26px;
+    /* Dimensione bilanciata */
+    font-weight: 900;
+    /* Massimo spessore */
     cursor: pointer;
-    color: #222; /* Grigio molto scuro */
+    color: #222;
+    /* Grigio molto scuro */
     line-height: 1;
     z-index: 21;
-    font-family: system-ui, -apple-system, sans-serif; /* Per una X più pulita */
+    font-family: system-ui, -apple-system, sans-serif;
+    /* Per una X più pulita */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .overlay-search {
-    padding: 15px 0; /* Ridotto spessore della fascia */
+    padding: 15px 0;
+    /* Ridotto spessore della fascia */
     position: relative;
-    margin-bottom: 20px; /* Avvicina le sezioni sotto */
+    margin-bottom: 20px;
+    /* Avvicina le sezioni sotto */
 }
 
 /* La riga grigia sottile sotto il cerca */
@@ -2140,7 +2159,8 @@ body.menu-open::before {
     content: "";
     position: absolute;
     bottom: 0;
-    left: 10px; /* Più estesa */
+    left: 10px;
+    /* Più estesa */
     right: 10px;
     height: 1px;
     background-color: #e0e0e0;
@@ -2153,11 +2173,13 @@ body.menu-open::before {
 
 .search-field {
     width: 100%;
-    padding: 8px 50px 8px 15px; /* Meno spessa */
+    padding: 8px 50px 8px 15px;
+    /* Meno spessa */
     border: none;
     border-radius: 6px;
     background-color: #e8e8e8;
-    font-size: 16px; /* Leggermente più piccolo per proporzione */
+    font-size: 16px;
+    /* Leggermente più piccolo per proporzione */
     color: #333;
     outline: none;
 }
@@ -2171,7 +2193,8 @@ body.menu-open::before {
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    color: #073e7c; /* Blu scuro */
+    color: #073e7c;
+    /* Blu scuro */
     font-size: 20px;
     font-weight: bold;
 }
@@ -2189,7 +2212,8 @@ body.menu-open::before {
 
 .col-title {
     font-size: 15px;
-    font-weight: 800; /* Molto bold come in immagine */
+    font-weight: 800;
+    /* Molto bold come in immagine */
     color: #000;
     margin-bottom: 12px;
 }
@@ -2197,7 +2221,8 @@ body.menu-open::before {
 .col-links {
     list-style: none;
     padding: 0;
-    margin: 0 0 25px 0; /* Spazio tra blocchi */
+    margin: 0 0 25px 0;
+    /* Spazio tra blocchi */
 }
 
 .col-links li {
@@ -2206,7 +2231,8 @@ body.menu-open::before {
 
 .col-links a {
     text-decoration: none;
-    color: #0c4a8e; /* Blu più simile all'originale */
+    color: #0c4a8e;
+    /* Blu più simile all'originale */
     font-size: 17px;
     font-weight: 500;
 }
@@ -2214,7 +2240,8 @@ body.menu-open::before {
 .col-links a:hover {
     color: #000;
     text-decoration: underline;
-    text-decoration-color: #0c4a8e; /* Sottolineatura blu al passaggio del mouse */
+    text-decoration-color: #0c4a8e;
+    /* Sottolineatura blu al passaggio del mouse */
     text-underline-offset: 3px;
 }
 
@@ -2237,26 +2264,45 @@ body.menu-open::before {
 }
 
 .logo-mini-placeholder i {
-    color: #f8c301; /* Colore oro per il triangolino di Telearena */
+    color: #f8c301;
+    /* Colore oro per il triangolino di Telearena */
 }
 
 /* Responsive Overlay */
-@media (max-width: 1150px) {
+@media (min-width: 828px) and (max-width: 1109px) {
     .nav-overlay {
-        width: 100%;
-        padding: 15px 20px;
+        width: 90% !important; /* Più lungo (largo) verso la destra */
+        left: 0 !important;
+    }
+
+    .overlay-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 82px !important;
+    }
+
+    .overlay-content-area {
+        padding: 0 25px 40px 25px !important; /* Molto più spazio orizzontale */
     }
 }
 
-@media (max-width: 828px) {
-    .overlay-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+@media (max-width: 827px) {
+    .nav-overlay {
+        width: 100% !important; /* Tutta pagina */
+        left: 0 !important;
     }
-}
 
-@media (max-width: 480px) {
     .overlay-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important; /* Una sola colonna */
+        gap: 20px;
+    }
+
+    .overlay-content-area {
+        padding: 0 40px 40px 40px !important; /* Ridotto per mobile per evitare l'effetto 'stretto' */
+    }
+
+    .overlay-logos {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
     }
 }
