@@ -1695,7 +1695,8 @@ footer a:not(.logo-placeholder):hover,
 
     .slider-track,
     .slider-track.cards-grid-4 {
-        display: flex;
+        display: flex !important;
+        flex-wrap: nowrap !important;
         overflow-x: auto !important;
         scroll-behavior: smooth;
         scrollbar-width: none;
@@ -1707,7 +1708,18 @@ footer a:not(.logo-placeholder):hover,
     }
 
     .slider-track>article {
-        flex: 0 0 calc(50% - 12.5px);
+        flex: 0 0 calc(50% - 15px) !important;
+        max-width: calc(50% - 15px) !important;
+        width: calc(50% - 15px) !important;
+        flex-shrink: 0 !important;
+        height: auto !important;
+        display: flex !important;
+    }
+
+    .dark-card,
+    .video-card {
+        height: 100% !important;
+        width: 100% !important;
     }
 
     .slider-btn {
@@ -1971,6 +1983,10 @@ footer a:not(.logo-placeholder):hover,
             padding-right: 15px !important;
         }
 
+        .dark-title {
+            font-size: 24px !important;
+        }
+
         .dark-section .slider-track>article {
             flex: 0 0 42% !important;
             
@@ -1982,8 +1998,10 @@ footer a:not(.logo-placeholder):hover,
         }
 
         .dark-card h3 {
-            font-size: 16px !important;
-            
+            font-size: 18px !important;
+            height: auto !important;
+            -webkit-line-clamp: 6 !important;
+            overflow: visible !important;
         }
 
         .card-row-content h2 {
@@ -2030,10 +2048,9 @@ footer a:not(.logo-placeholder):hover,
         width: 100%;
     }
 
-    .slider-track>article,
-    .dark-section .slider-track>article {
-        flex: 0 0 45% !important;
-        
+    .slider-track img {
+        width: 100% !important;
+        height: auto !important;
     }
 
     .dark-card h3 {
@@ -2043,8 +2060,16 @@ footer a:not(.logo-placeholder):hover,
     }
 
     .card-row-content h2 {
-        font-size: 26px !important;
-        
+        font-size: 22px !important;
+    }
+
+    .dark-card h3,
+    .video-card-text h3 {
+        font-size: 18px !important;
+        height: auto !important;
+        -webkit-line-clamp: 6 !important;
+        max-height: none !important;
+        overflow: visible !important;
     }
 
     .prev-btn {
