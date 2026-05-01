@@ -488,7 +488,7 @@
         </div>
     </footer>
 
-    <!-- Overlay Menu Navigazione -->
+    
     <div id="nav-overlay" class="nav-overlay">
         <div class="overlay-top-bar">
             <header class="overlay-header">
@@ -506,7 +506,7 @@
             </div>
 
             <div class="overlay-grid">
-                <!-- Colonna 1 -->
+                
                 <div class="overlay-col">
                     <h4 class="col-title"><a href="#">Territori</a></h4>
                     <ul class="col-links">
@@ -535,7 +535,7 @@
                     </ul>
                 </div>
 
-                <!-- Colonna 2 -->
+                
                 <div class="overlay-col">
                     <h4 class="col-title"><a href="#">Media</a></h4>
                     <ul class="col-links">
@@ -562,7 +562,7 @@
                     </ul>
                 </div>
 
-                <!-- Colonna 3 -->
+                
                 <div class="overlay-col">
                     <ul class="col-links" style="margin-top: 5px;">
                         <li><a href="#">Lorem Colonne</a></li>
@@ -588,10 +588,10 @@
                     </ul>
                 </div>
 
-                <!-- Colonna 4 -->
+                
                 <div class="overlay-col">
                     <h4 class="col-title"><a href="#">Magazine</a></h4>
-                    <ul class="col-links" style="height: 40px;"></ul> <!-- Spazio vuoto per allineamento -->
+                    <ul class="col-links" style="height: 40px;"></ul> 
                     
                     <h4 class="col-title"><a href="#">Servizi</a></h4>
                     <ul class="col-links">
@@ -621,7 +621,6 @@
     </div>
 
     <script>
-        // Funzione universale per gli slider
         function initSlider(wrapperSelector, trackSelector, btnSelector) {
             document.querySelectorAll(wrapperSelector).forEach(wrapper => {
                 const track = wrapper.querySelector(trackSelector);
@@ -634,26 +633,22 @@
                     const item = track.firstElementChild;
                     if (!item) return 0;
                     const gap = parseInt(window.getComputedStyle(track).gap) || 0;
-                    return (item.offsetWidth + gap) * 1.5; // Scorri un po' di più
+                    return (item.offsetWidth + gap) * 1.5;
                 }
 
                 function updateButtons() {
                     if (track.scrollLeft <= 10) {
-                        prevBtn.classList.add('hidden');
                         prevBtn.style.opacity = '0';
                         prevBtn.style.pointerEvents = 'none';
                     } else {
-                        prevBtn.classList.remove('hidden');
                         prevBtn.style.opacity = '1';
                         prevBtn.style.pointerEvents = 'auto';
                     }
 
                     if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 10) {
-                        nextBtn.classList.add('hidden');
                         nextBtn.style.opacity = '0';
                         nextBtn.style.pointerEvents = 'none';
                     } else {
-                        nextBtn.classList.remove('hidden');
                         nextBtn.style.opacity = '1';
                         nextBtn.style.pointerEvents = 'auto';
                     }
@@ -673,12 +668,9 @@
             });
         }
 
-        // Inizializzo gli slider delle notizie
         initSlider('.slider-wrapper', '.slider-track', '.slider-btn');
-        // Inizializzo lo slider dei tag (Tablet/Mobile)
         initSlider('.tag-slider-wrapper', '.tag-track', '.tag-btn');
 
-        // Gestione Menu Overlay
         const overlay = document.getElementById('nav-overlay');
         const closeBtn = document.getElementById('close-menu');
         const triggers = document.querySelectorAll('.menu-trigger');
@@ -687,16 +679,15 @@
             trigger.addEventListener('click', () => {
                 overlay.classList.add('active');
                 document.body.classList.add('menu-open');
-                document.body.style.overflow = 'hidden'; // Blocca scroll
+                document.body.style.overflow = 'hidden';
             });
         });
 
         closeBtn.addEventListener('click', () => {
             overlay.classList.remove('active');
             document.body.classList.remove('menu-open');
-            document.body.style.overflow = ''; // Ripristina scroll
+            document.body.style.overflow = '';
         });
     </script>
 </body>
-
 </html>
