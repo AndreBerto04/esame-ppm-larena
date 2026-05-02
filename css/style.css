@@ -4,10 +4,13 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+html {
     max-width: 100%;
     overflow-x: hidden;
+}
+
+body {
+    max-width: 100%;
 }
 
 body {
@@ -69,7 +72,7 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 9999;
+    z-index: 1500;
     background-color: #073e7c;
     color: #fff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
@@ -1438,7 +1441,7 @@ footer a:not(.logo-placeholder):hover,
     }
 
     .site-header {
-        display: contents;
+        display: contents !important;
     }
 
     .top-bar {
@@ -1555,7 +1558,7 @@ footer a:not(.logo-placeholder):hover,
     }
 
     body {
-        padding-top: 48px !important;
+        padding-top: 0 !important;
     }
 
     .nav-bg,
@@ -1573,17 +1576,22 @@ footer a:not(.logo-placeholder):hover,
         color: #ffffff !important;
     }
 
-    .btn-edizione,
-    .top-bar {
+    .btn-edizione {
         display: none !important;
+    }
+
+    .top-bar {
+        position: relative !important;
+        display: flex !important;
+        background-color: #031A34 !important;
+        z-index: 1001 !important;
     }
 
 
     .logo-bar {
-        position: fixed !important;
+        position: sticky !important;
         top: 0;
-        left: 0;
-        z-index: 10001;
+        z-index: 1000;
         background-color: #073e7c !important;
         display: flex !important;
         flex-direction: row !important;
@@ -1594,6 +1602,10 @@ footer a:not(.logo-placeholder):hover,
         width: 100% !important;
         max-width: none !important;
         margin: 0 !important;
+    }
+
+    body.menu-open .top-bar {
+        z-index: 1001 !important;
     }
 
     .mobile-header-large {
@@ -2156,7 +2168,7 @@ footer a:not(.logo-placeholder):hover,
     height: 100%;
     background-color: #fff;
 
-    z-index: 20000;
+    z-index: 2000;
 
     transform: translateX(-100%);
     transition: transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
@@ -2195,7 +2207,7 @@ body::before {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 19999;
+    z-index: 100;
     opacity: 0;
     visibility: hidden;
     transition: opacity 1s ease-in-out, visibility 1s ease-in-out;

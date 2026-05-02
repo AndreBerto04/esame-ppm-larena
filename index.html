@@ -488,7 +488,7 @@
         </div>
     </footer>
 
-    
+
     <div id="nav-overlay" class="nav-overlay">
         <div class="overlay-top-bar">
             <header class="overlay-header">
@@ -501,13 +501,14 @@
             <div class="overlay-search">
                 <div class="search-input-wrapper">
                     <label for="search-input" class="sr-only">Cerca nel sito</label>
-                    <input id="search-input" type="text" placeholder="Cerca nel sito..." class="search-field" aria-label="Cerca nel sito">
+                    <input id="search-input" type="text" placeholder="Cerca nel sito..." class="search-field"
+                        aria-label="Cerca nel sito">
                     <i class="fa-solid fa-magnifying-glass search-icon-inside"></i>
                 </div>
             </div>
 
             <div class="overlay-grid">
-                
+
                 <div class="overlay-col">
                     <h4 class="col-title"><a href="#">Territori</a></h4>
                     <ul class="col-links">
@@ -536,7 +537,7 @@
                     </ul>
                 </div>
 
-                
+
                 <div class="overlay-col">
                     <h4 class="col-title"><a href="#">Media</a></h4>
                     <ul class="col-links">
@@ -563,7 +564,7 @@
                     </ul>
                 </div>
 
-                
+
                 <div class="overlay-col">
                     <ul class="col-links" style="margin-top: 5px;">
                         <li><a href="#">Lorem Colonne</a></li>
@@ -589,11 +590,11 @@
                     </ul>
                 </div>
 
-                
+
                 <div class="overlay-col">
                     <h4 class="col-title"><a href="#">Magazine</a></h4>
-                    <ul class="col-links" style="height: 40px;"></ul> 
-                    
+                    <ul class="col-links" style="height: 40px;"></ul>
+
                     <h4 class="col-title"><a href="#">Servizi</a></h4>
                     <ul class="col-links">
                         <li><a href="#">Lorem Meteo</a></li>
@@ -611,10 +612,13 @@
                         <li><a href="#">Lorem Branded</a></li>
                         <li><a href="#">Lorem Protagonisti</a></li>
                     </ul>
-                    
+
                     <div class="overlay-logos">
-                        <div class="logo-mini-placeholder"><a href="#">Azienda <i class="fa-solid fa-play"></i></a></div>
-                        <div class="logo-mini-placeholder" style="color: #073e7c;"><a href="#" style="color: inherit;">Radio Lorem <i class="fa-solid fa-tower-broadcast"></i></a></div>
+                        <div class="logo-mini-placeholder"><a href="#">Azienda <i class="fa-solid fa-play"></i></a>
+                        </div>
+                        <div class="logo-mini-placeholder" style="color: #073e7c;"><a href="#"
+                                style="color: inherit;">Radio Lorem <i class="fa-solid fa-tower-broadcast"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -680,15 +684,14 @@
             trigger.addEventListener('click', () => {
                 overlay.classList.add('active');
                 document.body.classList.add('menu-open');
-                document.body.style.overflow = 'hidden';
             });
         });
 
         closeBtn.addEventListener('click', () => {
             overlay.classList.remove('active');
             document.body.classList.remove('menu-open');
-            document.body.style.overflow = '';
         });
     </script>
 </body>
+
 </html>
