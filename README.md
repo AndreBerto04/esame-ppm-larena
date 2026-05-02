@@ -9,7 +9,8 @@ Questo progetto consiste nella riproduzione fedele del layout della homepage del
 
 ## Tecnologie Utilizzate
 * HTML5 (Tag semantici come `<article>`, `<section>`, ecc.)
-* CSS3 (Grid Layout, Flexbox)
+* CSS3 (Grid Layout, Flexbox, Animazioni e Transizioni personalizzate)
+* JavaScript (Per il funzionamento di slider, tag-slider e menu laterale)
 
 ## Note
 Come richiesto dalle specifiche dell'esame, non sono stati utilizzati font, testi o immagini originali, ma esclusivamente placeholder (Lorem Ipsum, Placehold.co).
